@@ -3,38 +3,16 @@ from bot import bot
 
 
 
-#d20
 @bot.command()
-async def roll(ctx):
-    number = random.randint(1,20)
-    await ctx.send(f"`You rolled a {number}!`")
+async def roll(ctx, dice_expression):
+    try:
+        num_dice, num_sides = map(int, dice_expression.lower().split('d'))
+        if num_dice <= 0 or num_sides <= 0:
+            raise ValueError
+        
+        rolls = [random.randint(1,num_sides) for _ in range(num_dice)]
+        total = sum(rolls)
 
-#d6
-@bot.command()
-async def rd6(ctx):
-    number = random.randint(1,6)
-    await ctx.send(f"`You rolled a {number}!`")
-
-#d8
-@bot.command()
-async def rd8(ctx):
-    number = random.randint(1,8)
-    await ctx.send(f"`You rolled a {number}!`")
-
-#d10
-@bot.command()
-async def rd10(ctx):
-    number = random.randint(1,10)
-    await ctx.send(f"`You rolled a {number}!`")
-
-#d12
-@bot.command()
-async def rd12(ctx):
-    number = random.randint(1,12)
-    await ctx.send(f"`You rolled a {number}!`")
-
-#d100
-@bot.command()
-async def rd100(ctx):
-    number = random.randint(1,100)
-    await ctx.send(f"`You rolled a {number}!`")
+        await ctx.send(f'Rolling {dice_expression}: {", ".join(map(str, rolls))}\nTotal: {total}')
+    except ValueError:
+        await ctx.send("Invalid dice expression. Please use the format XdY, where X is the number of dice and Y is the number of sides.")
