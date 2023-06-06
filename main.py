@@ -1,4 +1,5 @@
 import discord
+import creds
 from discord.ext import commands
 from bot import bot
 
@@ -11,8 +12,6 @@ import pengunerdemoji
 
 intents = discord.Intents.default()  # Create an instance of the default intents
 intents.members = True  # Enable the privileged members intent
-
-TOKEN = 'MTExNDM3OTMzMjQzODE5NjI3OA.Gd_Ha5.ZnP0-nNNndRyEUwL908EwdOkqx_gkdcBJIZaL8'
 
 
 #commands for testing
