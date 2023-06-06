@@ -3,92 +3,121 @@ from bot import bot
 
 
 @bot.command()
-async def roll(ctx, roll_type='', dice_expression='1d20'):
+async def roll(ctx, dice_expression='1d20'):
     try:
-        is_advantage = False
-        is_disadvantage = False
-
-        # Check if Advantage or Disadvantage is specified
-        if roll_type.lower() == 'a':
-            is_advantage = True
-        elif roll_type.lower() == 'd':
-            is_disadvantage = True
+        # Split the dice expression into dice and modifier (if present)
+        parts = dice_expression.split('+')
+        dice_part = parts[0]
+        modifier_part = parts[1] if len(parts) > 1 else '0'
 
         # Parse the dice expression
-        parts = dice_expression.lower().split('+')
-        num_dice, num_sides = map(int, parts[0].split('d'))
+        num_dice, num_sides = map(int, dice_part.lower().split('d'))
+        modifier = int(modifier_part)
+
         if num_dice <= 0 or num_sides <= 0:
             raise ValueError
 
+        # Roll the dice
         rolls = [random.randint(1, num_sides) for _ in range(num_dice)]
+        total = sum(rolls) + modifier
 
-        # Apply Advantage or Disadvantage
-        if is_advantage:
-            rolls = rolls + [random.randint(1, num_sides) for _ in range(num_dice)]
-            total = max(rolls)
-            roll_msg = f'Rolling {dice_expression} with Advantage:'
-        elif is_disadvantage:
-            rolls = rolls + [random.randint(1, num_sides) for _ in range(num_dice)]
-            total = min(rolls)
-            roll_msg = f'Rolling {dice_expression} with Disadvantage:'
-        else:
-            total = sum(rolls)
-            roll_msg = f'Rolling {dice_expression}:'
+        await ctx.send(f'```Rolling {dice_expression}: {", ".join(map(str, rolls))}\nTotal: {total}```')
 
-        if len(parts) > 1:
-            modifiers = list(map(int, parts[1:]))
-            total += sum(modifiers)
+    except (ValueError, IndexError):
+        await ctx.send('Invalid dice expression. Please use the format XdY[+Z], where X is the number of dice, Y is the number of sides, and Z is an optional modifier.')
 
-        await ctx.send(f'```{roll_msg} {", ".join(map(str, rolls))}\nTotal: {total}```')
+@bot.command()
+async def rolla(ctx, modifier='',):
+    try:
+        # Roll with advantage (2d20) and calculate the total
+        rolls = [random.randint(1, 20) for _ in range(2)]
+        total = max(rolls)
+
+        # Apply the modifier if provided
+        if modifier:
+            total += int(modifier)
+
+        await ctx.send(f'```Rolling with Advantage: {", ".join(map(str, rolls))}\nTotal: {total}```')
+
     except ValueError:
-        await ctx.send(
-            "Invalid dice expression. Please use the format XdY[+Z], where X is the number of dice, Y is the number of sides, and Z is an optional modifier. "
-            "You can specify 'a' for Advantage or 'd' for Disadvantage after the command.")
+        await ctx.send('Invalid modifier. Please provide a valid number for the modifier.')
+
+@bot.command()
+async def rolld(ctx, modifier=''):
+    try:
+        # Roll with disadvantage (2d20) and calculate the total
+        rolls = [random.randint(1, 20) for _ in range(2)]
+        total = min(rolls)
+
+        # Apply the modifier if provided
+        if modifier:
+            total += int(modifier)
+
+        await ctx.send(f'```Rolling with Disadvantage: {", ".join(map(str, rolls))}\nTotal: {total}```')
+
+    except ValueError:
+        await ctx.send('Invalid modifier. Please provide a valid number for the modifier.')
 
 
 @bot.command()
-async def whisperRoll(ctx, roll_type='', dice_expression='1d20'):
+async def wroll(ctx, dice_expression=''):
     try:
-        is_advantage = False
-        is_disadvantage = False
-
-        # Check if Advantage or Disadvantage is specified
-        if roll_type.lower() == 'a':
-            is_advantage = True
-        elif roll_type.lower() == 'd':
-            is_disadvantage = True
-
         # Parse the dice expression
         parts = dice_expression.lower().split('+')
         num_dice, num_sides = map(int, parts[0].split('d'))
-        if num_dice <= 0 or num_sides <= 0:
-            raise ValueError
 
+        # Roll the dice and calculate the total
         rolls = [random.randint(1, num_sides) for _ in range(num_dice)]
+        total = sum(rolls)
 
-        # Apply Advantage or Disadvantage
-        if is_advantage:
-            rolls = rolls + [random.randint(1, num_sides) for _ in range(num_dice)]
-            total = max(rolls)
-            roll_msg = f'Rolling {dice_expression} with Advantage:'
-        elif is_disadvantage:
-            rolls = rolls + [random.randint(1, num_sides) for _ in range(num_dice)]
-            total = min(rolls)
-            roll_msg = f'Rolling {dice_expression} with Disadvantage:'
-        else:
-            total = sum(rolls)
-            roll_msg = f'Rolling {dice_expression}:'
-
+        # Apply modifiers if provided
         if len(parts) > 1:
             modifiers = list(map(int, parts[1:]))
             total += sum(modifiers)
 
-        # Create a direct message channel with the sender
+        # Send the roll result as a DM to the sender
         dm_channel = await ctx.author.create_dm()
+        await dm_channel.send(f'```Rolling {dice_expression}: {", ".join(map(str, rolls))}\nTotal: {total}```')
 
-        # Send the roll result to the sender's DMs
-        await dm_channel.send(f'```{roll_msg} {", ".join(map(str, rolls))}\nTotal: {total}```')
-    except ValueError:
+    except (ValueError, IndexError):
         await ctx.send(
-            "Invalid dice expression. Please use the format XdY[+Z], where X is the number of dice, Y is the number of sides, and Z is an optional modifier. "
-            "You can specify 'a' for Advantage or 'd' for Disadvantage after the command.")
+            "Invalid dice expression. Please use the format XdY[+Z], where X is the number of dice, Y is the number of sides, and Z is an optional modifier.")
+
+
+@bot.command()
+async def wrolla(ctx, modifier=''):
+    try:
+        # Roll with advantage (2d20) and calculate the total
+        rolls = [random.randint(1, 20) for _ in range(2)]
+        total = max(rolls)
+
+        # Apply the modifier if provided
+        if modifier:
+            total += int(modifier)
+
+        # Send the roll result as a DM to the sender
+        dm_channel = await ctx.author.create_dm()
+        await dm_channel.send(f'```Rolling with Advantage: {", ".join(map(str, rolls))}\nTotal: {total}```')
+
+    except ValueError:
+        await ctx.send('Invalid modifier. Please provide a valid number for the modifier.')
+
+
+@bot.command()
+async def wrolld(ctx, modifier=''):
+    try:
+        # Roll with disadvantage (2d20) and calculate the total
+        rolls = [random.randint(1, 20) for _ in range(2)]
+        total = min(rolls)
+
+        # Apply the modifier if provided
+        if modifier:
+            total += int(modifier)
+
+        # Send the roll result as a DM to the sender
+        dm_channel = await ctx.author.create_dm()
+        await dm_channel.send(f'```Rolling with Disadvantage: {", ".join(map(str, rolls))}\nTotal: {total}```')
+
+    except ValueError:
+        await ctx.send('Invalid modifier. Please provide a valid number for the modifier.')
+
