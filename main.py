@@ -34,4 +34,4 @@ async def greet(ctx, member: discord.Member):
 async def on_ready():
     print(f'Logged in as {bot.user.name} ({bot.user.id})')
 
-bot.run(TOKEN)
+bot.run(creds.TOKEN)
