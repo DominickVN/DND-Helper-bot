@@ -2,7 +2,7 @@ import random
 from bot import bot
 
 
-@bot.command()
+@bot.command(aliases=['r'])
 async def roll(ctx, dice_expression='1d20'):
     try:
         # Split the dice expression into dice and modifier (if present)
@@ -26,7 +26,7 @@ async def roll(ctx, dice_expression='1d20'):
     except (ValueError, IndexError):
         await ctx.send('Invalid dice expression. Please use the format XdY[+Z], where X is the number of dice, Y is the number of sides, and Z is an optional modifier.')
 
-@bot.command()
+@bot.command(aliases=['ra'])
 async def rolla(ctx, modifier='',):
     try:
         # Roll with advantage (2d20) and calculate the total
@@ -42,7 +42,7 @@ async def rolla(ctx, modifier='',):
     except ValueError:
         await ctx.send('Invalid modifier. Please provide a valid number for the modifier.')
 
-@bot.command()
+@bot.command(aliases=['rd'])
 async def rolld(ctx, modifier=''):
     try:
         # Roll with disadvantage (2d20) and calculate the total
@@ -59,7 +59,7 @@ async def rolld(ctx, modifier=''):
         await ctx.send('Invalid modifier. Please provide a valid number for the modifier.')
 
 
-@bot.command()
+@bot.command(aliases=['wr'])
 async def wroll(ctx, dice_expression=''):
     try:
         # Parse the dice expression
@@ -84,7 +84,7 @@ async def wroll(ctx, dice_expression=''):
             "Invalid dice expression. Please use the format XdY[+Z], where X is the number of dice, Y is the number of sides, and Z is an optional modifier.")
 
 
-@bot.command()
+@bot.command(aliases=['wra'])
 async def wrolla(ctx, modifier=''):
     try:
         # Roll with advantage (2d20) and calculate the total
@@ -103,7 +103,7 @@ async def wrolla(ctx, modifier=''):
         await ctx.send('Invalid modifier. Please provide a valid number for the modifier.')
 
 
-@bot.command()
+@bot.command(aliases=['wrd'])
 async def wrolld(ctx, modifier=''):
     try:
         # Roll with disadvantage (2d20) and calculate the total

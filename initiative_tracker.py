@@ -5,7 +5,7 @@ from bot import bot
 main_initiative_tracker = {}  # Dictionary to store main initiative rolls
 secret_initiative_tracker = {}  # Dictionary to store secret initiative rolls
 
-@bot.command()
+@bot.command(aliases=['i'])
 async def initiative(ctx, action=None, *, args=None):
     if action == 'start':
         main_initiative_tracker.clear()

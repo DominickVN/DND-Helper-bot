@@ -4,7 +4,7 @@ from first_level_library import first_level_spells
 
 
 
-@bot.command()
+@bot.command(aliases=['s'])
 async def spell(ctx, *, spell_name):
     spell_name = spell_name.lower()  # Convert the spell name to lowercase for case-insensitive matching
     if spell_name in cantrips:
