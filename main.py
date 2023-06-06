@@ -19,14 +19,6 @@ intents.members = True  # Enable the privileged members intent
 @bot.command()
 async def test(ctx):
     await ctx.send("`Bot is working!`")
-
-@bot.command()
-async def hello(ctx):
-    await ctx.send("`Hello, I'm your Discord bot!`")
-
-@bot.command()
-async def greet(ctx, member: discord.Member):
-    await ctx.send(f"`Hello, `{member.mention}`!`")
 #commands for testing
 
 
