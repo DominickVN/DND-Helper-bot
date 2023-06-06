@@ -13,6 +13,6 @@ async def roll(ctx, dice_expression):
         rolls = [random.randint(1,num_sides) for _ in range(num_dice)]
         total = sum(rolls)
 
-        await ctx.send(f'`Rolling {dice_expression}: {", ".join(map(str, rolls))}\nTotal: {total}`')
+        await ctx.send(f'```Rolling {dice_expression}: {", ".join(map(str, rolls))}\nTotal: {total}```')
     except ValueError:
         await ctx.send("Invalid dice expression. Please use the format XdY, where X is the number of dice and Y is the number of sides.")

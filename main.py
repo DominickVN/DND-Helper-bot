@@ -4,9 +4,10 @@ from discord.ext import commands
 from bot import bot
 
 import diceCommands
-import spellcommands
+import spellCommands
 import conditionCommands
 import pengunerdemoji
+import helpfulCommands
 
 
 
