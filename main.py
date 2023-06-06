@@ -13,8 +13,8 @@ import initiative_tracker
 
 
 
-intents = discord.Intents.default()  # Create an instance of the default intents
-intents.members = True  # Enable the privileged members intent
+intents = discord.Intents.default()
+intents.members = True
 
 
 #commands for testing
