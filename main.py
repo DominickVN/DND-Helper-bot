@@ -8,6 +8,7 @@ import spellCommands
 import conditionCommands
 import pengunerdemoji
 import helpfulCommands
+import calculator
 
 
 
