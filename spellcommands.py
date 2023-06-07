@@ -4,6 +4,7 @@ from first_level_library import first_level_spells
 from second_level_library import second_level_spells
 from third_level_library import third_level_spells
 from fourth_level_library import fourth_level_spells
+from fifth_level_library import fifth_level_spells
 
 
 
