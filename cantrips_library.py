@@ -1,17 +1,17 @@
-#Template for spell dictionary
+# Template for spell dictionary
 # spell = {
-    # 'name': {
-    #     'description':'',
-    #     'level':'',
-    #     'casting_time':'',
-    #     'range':'',
-    #     'components':'',
-    #     'duration':'',
-    #     'school':'',
-    #     'concentration':'',
-    #     'Ritual':'', #True or False
+#     'name': {
+#         'description':'',
+#         'level':'',
+#         'casting_time':'',
+#         'range':'',
+#         'components':'',
+#         'duration':'',
+#         'school':'',
+#         'concentration':'', True or False
+#         'Ritual':'', True or False
 
-    # },
+#     },
 # }
 
 
