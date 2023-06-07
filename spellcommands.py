@@ -9,7 +9,7 @@ from fifth_level_library import fifth_level_spells
 from sixth_level_library import sixth_level_spells
 from seventh_level_library import seventh_level_spells
 from eighth_level_library import eighth_level_spells
-# from ninth_level_library import ninth_level_spells
+from ninth_level_library import ninth_level_spells
 
 
 
@@ -18,7 +18,7 @@ async def spell(ctx, *, spell_name):
     spell_name = spell_name.lower()  # Convert the spell name to lowercase for case-insensitive matching
     spell_info = None
     libraries = [cantrips, first_level_spells, second_level_spells, third_level_spells, fourth_level_spells,
-                 fifth_level_spells, sixth_level_spells, seventh_level_spells, eighth_level_spells]
+                 fifth_level_spells, sixth_level_spells, seventh_level_spells, eighth_level_spells, ninth_level_spells]
     for library in libraries:
         if spell_name in library:
             spell_info = library[spell_name]
