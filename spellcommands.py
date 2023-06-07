@@ -8,29 +8,22 @@ from fourth_level_library import fourth_level_spells
 from fifth_level_library import fifth_level_spells
 from sixth_level_library import sixth_level_spells
 from seventh_level_library import seventh_level_spells
+from eighth_level_library import eighth_level_spells
+from ninth_level_library import ninth_level_spells
 
 
 
 @bot.command(aliases=['s'])
 async def spell(ctx, *, spell_name):
     spell_name = spell_name.lower()  # Convert the spell name to lowercase for case-insensitive matching
-    if spell_name in cantrips:
-        spell_info = cantrips[spell_name]
-    elif spell_name in first_level_spells:
-        spell_info = first_level_spells[spell_name]
-    elif spell_name in second_level_spells:
-        spell_info = second_level_spells[spell_name]
-    elif spell_name in third_level_spells:
-        spell_info = third_level_spells[spell_name]
-    elif spell_name in fourth_level_spells:
-        spell_info = fourth_level_spells[spell_name]
-    elif spell_name in fifth_level_spells:
-        spell_info = fifth_level_spells[spell_name]
-    elif spell_name in sixth_level_spells:
-        spell_info = sixth_level_spells[spell_name]
-    elif spell_name in seventh_level_spells:
-        spell_info = seventh_level_spells[spell_name]
-    else:
+    spell_info = None
+    libraries = [cantrips, first_level_spells, second_level_spells, third_level_spells, fourth_level_spells,fifth_level_spells, sixth_level_spells, seventh_level_spells, eighth_level_spells, ninth_level_spells]
+    for library in libraries:
+        if spell_name in library:
+            spell_info = library[spell_name]
+            break
+
+    if not spell_info:
         response = "Spell not found."
         await ctx.send(response)
         return
@@ -48,7 +41,14 @@ async def spell(ctx, *, spell_name):
                f"```* School: {spell_info['school']}\n```" \
                f"```\n{spell_info['description']}```"
 
-    await ctx.send(response)
+    # Split the response if it exceeds the Discord API character limit
+    if len(response) > 2000:
+        response_parts = [response[i:i + 2000] for i in range(0, len(response), 2000)]
+        for i, part in enumerate(response_parts):
+            part = f"{part} (Part {i+1}/{len(response_parts)})"
+            await ctx.send(part)
+    else:
+        await ctx.send(response)
 
 
 
