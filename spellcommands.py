@@ -22,16 +22,14 @@ async def spell(ctx, *, spell_name):
         await ctx.send(response)
         return
 
-    # Capitalize both words if the spell name contains a space
-    if ' ' in spell_name:
-        spell_name = spell_name.title()
+    # Capitalize the spell name
+    spell_name = spell_name.title()
 
     response = f"# {spell_name}\n\n" \
                f"```Level: {spell_info['level']}\n```" \
                f"```* Casting Time: {spell_info['casting_time']}\n```" \
                f"```* Range: {spell_info['range']}\n```" \
                f"```* Components: {spell_info['components']}\n```" \
-               f"```* Material Components: {spell_info.get('material_components', '-')}\n```" \
                f"```* Duration: {spell_info['duration']}\n```" \
                f"```* Ritual: {spell_info.get('ritual', False)}\n```" \
                f"```* School: {spell_info['school']}\n```" \
