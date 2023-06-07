@@ -3,6 +3,7 @@ from cantrips_library import cantrips
 from first_level_library import first_level_spells
 from second_level_library import second_level_spells
 from third_level_library import third_level_spells
+from fourth_level_library import fourth_level_spells
 
 
 
@@ -17,6 +18,10 @@ async def spell(ctx, *, spell_name):
         spell_info = second_level_spells[spell_name]
     elif spell_name in third_level_spells:
         spell_info = third_level_spells[spell_name]
+    elif spell_name in fourth_level_spells:
+        spell_info = fourth_level_spells[spell_name]
+    elif spell_name in fifth_level_spells:
+        spell_info = fifth_level_spells[spell_name]
     else:
         response = "Spell not found."
         await ctx.send(response)
