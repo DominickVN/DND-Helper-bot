@@ -4,7 +4,7 @@ from bot import bot
 async def actions(ctx):
     await ctx.send("```At the beginning of your turn you get all of your available actions back. These include: \n\n• Action \n\n• Bonus Action \n\n• Reaction \n\nThese actions can be spent like currency; You can use each of them once per turn, and you do not need to use all of them.```")
 
-@bot.command(aliases=['c'])
+@bot.command()
 async def commands(ctx):
     await ctx.send("```Here are some useful commands:\n\n•!roll: Allows you to roll dice! It can roll any number of dice with any number of sides, and add modifiers! Try !roll 2d6+3 \n     •For more dice commands, do !diceinfo\n\n•!spell: Allows you to look up the spell info for any spell. Try !spell Fire Bolt \n\n•!initiative: Starts an initative tracker that lets a DM keep track of turn order! \n     •Do !initiativeinfo for a runthrough of how to use the tracker.\n\n•!condition: look up any condition with this command. Try !condition blinded!```")
 

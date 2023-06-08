@@ -1,6 +1,16 @@
 import discord
 from bot import bot
-from .libraries import cantrips, first_level_spells, second_level_spells, third_level_spells, fourth_level_spells, fifth_level_spells, sixth_level_spells, seventh_level_spells, eighth_level_spells, ninth_level_spells
+
+from libraries.cantrips_library import cantrips
+from libraries.first_level_library import first_level_spells
+from libraries.second_level_library import second_level_spells
+from libraries.third_level_library import third_level_spells
+from libraries.fourth_level_library import fourth_level_spells
+from libraries.fifth_level_library import fifth_level_spells
+from libraries.sixth_level_library import sixth_level_spells
+from libraries.seventh_level_library import seventh_level_spells
+from libraries.eighth_level_library import eighth_level_spells
+from libraries.ninth_level_library import ninth_level_spells
 
 
 

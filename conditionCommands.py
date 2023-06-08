@@ -1,5 +1,5 @@
 from bot import bot
-from .libraries import conditions
+from libraries.conditions_library import conditions
 import discord
 
 @bot.command(aliases=['c', 'con'])
