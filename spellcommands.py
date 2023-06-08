@@ -51,27 +51,3 @@ async def spell(ctx, *, spell_name):
     await ctx.send(embed=embed)
 
 #most spells still work, a small few aren't perfectly formatted yet
-
-
-
-@bot.command()
-async def search_spell_by_title(ctx, title):
-    spell = None
-    for library in [cantrips, first_level_spells, second_level_spells, third_level_spells, fourth_level_spells, fifth_level_spells, sixth_level_spells, seventh_level_spells]:
-        if title.lower() in library:
-            spell = library[title.lower()]
-            break
-
-    if spell:
-        embed = discord.Embed(title=title.capitalize(), description=spell['description'], color=0x00ff00)
-        embed.add_field(name="Level", value=str(spell['level']), inline=True)
-        embed.add_field(name="Casting Time", value=spell['casting_time'], inline=True)
-        embed.add_field(name="Range", value=spell['range'], inline=True)
-        embed.add_field(name="Components", value=spell['components'], inline=True)
-        embed.add_field(name="Duration", value=spell['duration'], inline=True)
-        embed.add_field(name="School", value=spell['school'], inline=True)
-        embed.add_field(name="Concentration", value=str(spell['concentration']), inline=True)
-        embed.add_field(name="Ritual", value=str(spell['ritual']), inline=True)
-        await ctx.send(embed=embed)
-    else:
-        await ctx.send("Spell not found.")
