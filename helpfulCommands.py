@@ -6,7 +6,7 @@ async def actions(ctx):
 
 @bot.command(aliases=['c'])
 async def commands(ctx):
-    await ctx.send("```Here are some useful commands:\n\n•!roll: Allows you to roll dice! It can roll any number of dice with any number of sides, and add modifiers! Try !roll 2d6+3 \n     •For more dice commands, do !diceinfo\n\n•!spell: Allows you to look up the spell info for any spell. Try !spell Fire Bolt \n\n•!initiative: Starts an initative tracker that lets a DM keep track of turn order! \n     •Do !initiativeinfo for a runthrough of how to use the tracker.\n\n•Look up conditions quickly! Do !blinded for blinded, !charmed for charmed, etc.```")
+    await ctx.send("```Here are some useful commands:\n\n•!roll: Allows you to roll dice! It can roll any number of dice with any number of sides, and add modifiers! Try !roll 2d6+3 \n     •For more dice commands, do !diceinfo\n\n•!spell: Allows you to look up the spell info for any spell. Try !spell Fire Bolt \n\n•!initiative: Starts an initative tracker that lets a DM keep track of turn order! \n     •Do !initiativeinfo for a runthrough of how to use the tracker.\n\n•!condition: look up any condition with this command. Try !condition blinded!```")
 
 @bot.command(aliases=['dc'])
 async def diceinfo(ctx):
