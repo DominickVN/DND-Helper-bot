@@ -18,7 +18,7 @@ async def spell(ctx, *, spell_name):
     spell_name = spell_name.lower()  # Convert the spell name to lowercase for case-insensitive matching
     spell_info = None
     libraries = [cantrips, first_level_spells, second_level_spells, third_level_spells, fourth_level_spells,
-                 fifth_level_spells, sixth_level_spells, seventh_level_spells, eighth_level_spells, ninth_level_spells]
+                fifth_level_spells, sixth_level_spells, seventh_level_spells, eighth_level_spells, ninth_level_spells]
     for library in libraries:
         if spell_name in library:
             spell_info = library[spell_name]
@@ -32,26 +32,25 @@ async def spell(ctx, *, spell_name):
     # Capitalize the spell name
     spell_name = spell_name.title()
 
-    response = f"# {spell_name}\n\n" \
-               f"```Level: {spell_info['level']}\n```" \
-               f"```* Casting Time: {spell_info['casting_time']}\n```" \
-               f"```* Range: {spell_info['range']}\n```" \
-               f"```* Components: {spell_info['components']}\n```" \
-               f"```* Duration: {spell_info['duration']}\n```" \
-               f"```* Ritual: {spell_info.get('ritual', False)}\n```" \
-               f"```* School: {spell_info['school']}\n```" \
-               f"```\n{spell_info['description']}```"
+    # Create an embed
+    embed = discord.Embed(title=spell_name, color=discord.Color.blue())
+    embed.add_field(name="Level", value=f"{spell_info['level']}", inline=False)
+    embed.add_field(name="Casting Time", value=f"{spell_info['casting_time']}", inline=False)
+    embed.add_field(name="Range", value=f"{spell_info['range']}", inline=False)
+    embed.add_field(name="Components", value=f"{spell_info['components']}", inline=False)
+    embed.add_field(name="Duration", value=f"{spell_info['duration']}", inline=False)
+    embed.add_field(name="Ritual", value=f"{spell_info.get('ritual', False)}", inline=False)
+    embed.add_field(name="School", value=f"{spell_info['school']}", inline=False)
+    
+    # Split the description into new fields whenever there is a \n or \n\n
+    description = spell_info['description']
+    description_parts = description.split("\n\n")
+    for i, part in enumerate(description_parts):
+        embed.add_field(name=f"Description (Part {i+1})", value=f"```\n{part}```", inline=False)
 
-    # Split the response if it exceeds the Discord API character limit
-    if len(response) > 2000:
-        response_parts = [response[i:i + 1990] for i in range(0, len(response), 1990)]  # Split into parts of 1990 characters
-        for i, part in enumerate(response_parts):
-            part = f"{part} (Part {i+1}/{len(response_parts)})"
-            await ctx.send(part)
-    else:
-        await ctx.send(response)
+    await ctx.send(embed=embed)
 
-#still needs to split longer definitions up into parts because of the Discord API limit
+#most spells still work, a small few aren't perfectly formatted yet
 
 
 
