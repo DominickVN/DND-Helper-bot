@@ -51,7 +51,7 @@ async def spell(ctx, *, spell_name):
         embed.add_field(name=f"Description (Part {i+1})", value=f"```\n{part}```", inline=False)
 
     # Send the spell title separately
-    await ctx.send(f"#{spell_name}")
+    await ctx.send(f"# {spell_name}")
     # Send the embed
     await ctx.send(embed=embed)
 
