@@ -35,7 +35,7 @@ async def spell(ctx, *, spell_name):
     spell_name = spell_name.title()
 
     # Create an embed
-    embed = discord.Embed(title=spell_name, color=discord.Color.blue())
+    embed = discord.Embed(color=discord.Color.blue())
     embed.add_field(name="Level", value=f"{spell_info['level']}", inline=False)
     embed.add_field(name="Casting Time", value=f"{spell_info['casting_time']}", inline=False)
     embed.add_field(name="Range", value=f"{spell_info['range']}", inline=False)
@@ -50,6 +50,9 @@ async def spell(ctx, *, spell_name):
     for i, part in enumerate(description_parts):
         embed.add_field(name=f"Description (Part {i+1})", value=f"```\n{part}```", inline=False)
 
+    # Send the spell title separately
+    await ctx.send(f"#{spell_name}")
+    # Send the embed
     await ctx.send(embed=embed)
 
 #most spells still work, a small few aren't perfectly formatted yet
