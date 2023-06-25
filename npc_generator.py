@@ -66,5 +66,8 @@ def generate_surname(race):
     return random.choice(surnames) if surnames else ''
 
 def generate_ability_scores():
+    abilities = ['Str', 'Dex', 'Con', 'Int', 'Wis', 'Cha']
     scores = [random.randint(8, 12) for _ in range(6)]
-    return ', '.join(map(str, scores))
+    ability_scores = [f'{abilities[i]}: {scores[i]}' for i in range(6)]
+    return ', '.join(ability_scores)
+
