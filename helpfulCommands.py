@@ -6,7 +6,7 @@ async def actions(ctx):
 
 @bot.command()
 async def commands(ctx):
-    await ctx.send("```Here are some useful commands:\n\n•!roll: Allows you to roll dice! It can roll any number of dice with any number of sides, and add modifiers! Try !roll 2d6+3 \n     •For more dice commands, do !diceinfo\n\n•!spell: Allows you to look up the spell info for any spell. Try !spell Fire Bolt \n\n•!initiative: Starts an initative tracker that lets a DM keep track of turn order! \n     •Do !initiativeinfo for a runthrough of how to use the tracker.\n\n•!condition: look up any condition with this command. Try !condition blinded!```")
+    await ctx.send("```Here are some useful commands:\n\n•!roll: Allows you to roll dice! It can roll any number of dice with any number of sides, and add modifiers! Try !roll 2d6+3 \n     •For more dice commands, do !diceinfo\n\n•!spell: Allows you to look up the spell info for any spell. Try !spell Fire Bolt \n\n•!initiative: Starts an initative tracker that lets a DM keep track of turn order! \n     •Do !initiativeinfo for a runthrough of how to use the tracker.\n\n•!condition: look up any condition with this command. Try !condition blinded!\n\n•!NPC: Generate an NPC statblock quickly! Try !NPC generate```")
 
 @bot.command(aliases=['dc'])
 async def diceinfo(ctx):
@@ -14,4 +14,4 @@ async def diceinfo(ctx):
 
 @bot.command(aliases=['ii'])
 async def initiativeinfo(ctx):
-    await ctx.send("```Here is how to use the Initiative Tracker:\n\n•!initiative start: Starts the Initiative Tracker.\n\n•!initiative rolled (roll): Takes your initiative in place of (roll) and adds your name to the initiative order.\n\n•!initiative add (name) (roll): Used to add NPC's and Enemies to the turn order.\n\n•!initiative secretAdd (name) (roll): Creates a second initiative order, 'secret initiative'. Best used in a DM with the bot. When initiative tracking is over the 'secret initiative order' will be sent to the person who used secretAdd, and only that order will have the secret names.\n\n•!initiative end: Ends the initiative tracking and prints the turn order in the channel that end was called.\n\nAlias: !i```")
+    await ctx.send("```Here is how to use the Initiative Tracker:\n\n•!initiative start: Starts the Initiative Tracker.\n\n•!initiative rolled (roll): Takes your initiative in place of (roll) and adds your name to the initiative order.\n\n•!initiative add (name) (roll): Used to add NPC's and Enemies to the turn order.\n\n•!initiative secretAdd (name) (roll): Creates a second initiative order, 'secret initiative'. Best used in a DM with the bot. When initiative tracking is over the 'secret initiative order' will be sent to the person who used secretAdd, and only that order will have the secret names.\n\n•!initiative end: Ends the initiative tracking and prints the turn order in the channel that end was called.\n\n•!initiative edit: Reopens the initiative order so new names can be added\n\nAlias: !i```")
