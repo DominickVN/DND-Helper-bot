@@ -45,7 +45,10 @@ async def npc(ctx, action=None, race=None, gender=None):
         age = random.randint(18, 60)
         ability_scores = generate_ability_scores()
 
-        npc_info = f"Name: {name} {surname}\nAge: {age}\nGender: {gender.capitalize()}\nAbility Scores: {ability_scores}\nRace: {race.title()}"
+        npc_info = f"Name: {name} {surname}\nAge: {age}"
+        if gender:
+            npc_info += f"\nGender: {gender.capitalize()}"
+        npc_info += f"\nAbility Scores: {ability_scores}\nRace: {race.title()}"
 
         await ctx.send(f"Generated NPC:\n```{npc_info}```")
 
@@ -58,8 +61,9 @@ def generate_name(race, gender):
         else:
             names = npc_races[race]['male_names'] + npc_races[race]['female_names']
     else:
-        names = npc_races[race]['names']
+        names = npc_races[race]['male_names'] + npc_races[race]['female_names']
     return random.choice(names)
+
 
 def generate_surname(race):
     surnames = npc_races[race]['surnames']
@@ -70,4 +74,3 @@ def generate_ability_scores():
     scores = [random.randint(8, 12) for _ in range(6)]
     ability_scores = [f'{abilities[i]}: {scores[i]}' for i in range(6)]
     return ', '.join(ability_scores)
-
