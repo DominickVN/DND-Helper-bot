@@ -54,6 +54,12 @@ async def initiative(ctx, action=None, *, args=None):
 
         await dm_channel.send(f'```Added secret name: {name} with rolled initiative: {rolled}```')
 
+    elif action == 'edit':
+        if main_initiative_tracker:
+            await ctx.send('```Initiative tracking is now in progress. Use `!initiative add (name) (rolled)` to add more names to the tracker.```')
+        else:
+            await ctx.send('```Initiative tracking has not been started. Use `!initiative start` to start the tracking.```')
+
     elif action == 'end':
         if not main_initiative_tracker:
             await ctx.send('```Initiative tracking is not started or no rolls have been made yet.```')
@@ -84,4 +90,4 @@ async def initiative(ctx, action=None, *, args=None):
             await dm_channel.send(f'```Secret Initiative Order:\n{secret_initiative_order}```')
 
     else:
-        await ctx.send('```Invalid action. Usage: `!initiative start`, `!initiative rolled (roll)`, `!initiative add (name) (rolled)`, `!initiative secretAdd (name) (rolled)`, `!initiative end`.```')
+        await ctx.send('```Invalid action. Usage: `!initiative start`, `!initiative rolled (roll)`, `!initiative add (name) (rolled)`, `!initiative secretAdd (name) (rolled)`, `!initiative edit`, `!initiative end`.```')
