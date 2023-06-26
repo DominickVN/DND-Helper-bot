@@ -2,7 +2,7 @@ from bot import bot
 from libraries.conditions_library import conditions
 import discord
 
-@bot.command(aliases=['c', 'con'])
+@bot.command(aliases=['con'])
 async def condition(ctx, *, condition_name):
     condition_name = condition_name.lower()
     condition_info = conditions.get(condition_name)
