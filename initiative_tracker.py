@@ -89,5 +89,32 @@ async def initiative(ctx, action=None, *, args=None):
             dm_channel = await ctx.author.create_dm()
             await dm_channel.send(f'```Secret Initiative Order:\n{secret_initiative_order}```')
 
+    elif action == 'remove':
+        if args is None:
+            await ctx.send('```Please provide the name or number of the creature to remove. Usage: !initiative remove (name/number)```')
+            return
+
+        # Split the args into names/numbers
+        names_or_numbers = [item.strip() for item in args.split(',')]
+
+        # Remove creatures from the main initiative tracker
+        for name_or_number in names_or_numbers:
+            if name_or_number.isdigit():
+                index = int(name_or_number) - 1
+                if 0 <= index < len(main_initiative_tracker):
+                    removed_name = list(main_initiative_tracker.keys())[index]
+                    del main_initiative_tracker[removed_name]
+            else:
+                removed_name = name_or_number
+                if removed_name in main_initiative_tracker:
+                    del main_initiative_tracker[removed_name]
+
+        await ctx.send('```Initiative tracker updated. Removed the specified creatures.```')
+
+        # Print the new initiative order without the removed names
+        sorted_main_initiative = sorted(main_initiative_tracker.items(), key=lambda x: x[1], reverse=True)
+        new_initiative_order = '\n'.join(f'{i+1}. {name} - {initiative}' for i, (name, initiative) in enumerate(sorted_main_initiative) if name not in secret_initiative_tracker)
+        await ctx.send(f'```New Initiative Order:\n{new_initiative_order}```')
+
     else:
-        await ctx.send('```Invalid action. Usage: `!initiative start`, `!initiative rolled (roll)`, `!initiative add (name) (rolled)`, `!initiative secretAdd (name) (rolled)`, `!initiative edit`, `!initiative end`.```')
+        await ctx.send('```Invalid action. Usage: `!initiative start`, `!initiative rolled (roll)`, `!initiative add (name) (rolled)`, `!initiative secretAdd (name) (rolled)`, `!initiative edit`, `!initiative end`, `!initiative remove (name/number)`.```')
