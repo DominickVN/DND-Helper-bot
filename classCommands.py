@@ -1,5 +1,5 @@
 from bot import bot
-from libraries.classes_library import class_rules
+# from libraries.classes_library import class_rules
 import discord
 
 @bot.command(aliases=['class','cl'])
