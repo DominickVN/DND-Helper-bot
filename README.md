@@ -1,1 +1,1 @@
-# DND-Helper-bot
+A Dungeons and Dragons helper! Do `&commands` to get a list of helpful commands! Prefix is `&`
