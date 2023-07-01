@@ -38,7 +38,7 @@ async def initiative(ctx, action=None, *, args=None):
 
         await ctx.send(f'```Added name: {name} with rolled initiative: {rolled}```')
 
-    elif action == 'secretAdd':
+    elif action == 'secretadd':
         if args is None:
             await ctx.send('```Please provide the name and rolled initiative. Usage: !initiative secretAdd (name) (rolled)```')
             return
@@ -116,5 +116,32 @@ async def initiative(ctx, action=None, *, args=None):
         new_initiative_order = '\n'.join(f'{i+1}. {name} - {initiative}' for i, (name, initiative) in enumerate(sorted_main_initiative) if name not in secret_initiative_tracker)
         await ctx.send(f'```New Initiative Order:\n{new_initiative_order}```')
 
+    elif action == 'rename':
+            if args is None:
+                await ctx.send('```Please provide the number of the creature to rename and the new name. Usage: !initiative rename (number) (new_name)```')
+                return
+
+            # Split the args into the number and new name
+            number, new_name = args.split(maxsplit=1)
+
+            if not number.isdigit():
+                await ctx.send('```Invalid number. Please provide a valid number corresponding to a creature in the initiative order.```')
+                return
+
+            index = int(number) - 1
+            if index < 0 or index >= len(main_initiative_tracker):
+                await ctx.send('```Invalid number. Please provide a valid number corresponding to a creature in the initiative order.```')
+                return
+
+            old_name = list(main_initiative_tracker.keys())[index]
+            main_initiative_tracker[new_name] = main_initiative_tracker.pop(old_name)
+
+            await ctx.send(f'```Renamed creature at position {number} to "{new_name}". Initiative order updated.```')
+
+            # Print the updated initiative order
+            sorted_main_initiative = sorted(main_initiative_tracker.items(), key=lambda x: x[1], reverse=True)
+            updated_initiative_order = '\n'.join(f'{i+1}. {name} - {initiative}' for i, (name, initiative) in enumerate(sorted_main_initiative) if name not in secret_initiative_tracker)
+            await ctx.send(f'```Updated Initiative Order:\n{updated_initiative_order}```')
+
     else:
-        await ctx.send('```Invalid action. Usage: `!initiative start`, `!initiative rolled (roll)`, `!initiative add (name) (rolled)`, `!initiative secretAdd (name) (rolled)`, `!initiative edit`, `!initiative end`, `!initiative remove (name/number)`.```')
+        await ctx.send('```Invalid action. Usage: `!initiative start`, `!initiative rolled (roll)`, `!initiative add (name) (rolled)`, `!initiative secretAdd (name) (rolled)`, `!initiative edit`, `!initiative end`, `!initiative remove (name/number)`, `!initiative rename (number) (new_name)`.```')
