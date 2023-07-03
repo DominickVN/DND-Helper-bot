@@ -121,3 +121,8 @@ async def wrolld(ctx, modifier=''):
     except ValueError:
         await ctx.send('Invalid modifier. Please provide a valid number for the modifier.')
 
+
+@bot.command(aliases=['fac'])
+async def flipacoin(ctx):
+    result = random.choice(["Heads", "Tails"])
+    await ctx.send(result)
