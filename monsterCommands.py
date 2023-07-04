@@ -1,14 +1,40 @@
 import discord
-from discord.ext import commands
 from bot import bot
 from libraries.MonsterLibraries.CR0_monsters_library import cr_0_monsters
 from libraries.MonsterLibraries.CRp125_monsters_library import cr_p125_monsters
+from libraries.MonsterLibraries.CRp25_monsters_library import cr_p25_monsters
+from libraries.MonsterLibraries.CRp5_monsters_library import cr_p5_monsters
+from libraries.MonsterLibraries.CR1_monsters_library import cr_1_monsters
+from libraries.MonsterLibraries.CR2_monsters_library import cr_2_monsters
+from libraries.MonsterLibraries.CR3_monsters_library import cr_3_monsters
+from libraries.MonsterLibraries.CR4_monsters_library import cr_4_monsters
+from libraries.MonsterLibraries.CR5_monsters_library import cr_5_monsters
+from libraries.MonsterLibraries.CR6_monsters_library import cr_6_monsters
+from libraries.MonsterLibraries.CR7_monsters_library import cr_7_monsters
+from libraries.MonsterLibraries.CR8_monsters_library import cr_8_monsters
+from libraries.MonsterLibraries.CR9_monsters_library import cr_9_monsters
+from libraries.MonsterLibraries.CR10_monsters_library import cr_10_monsters
+from libraries.MonsterLibraries.CR11_monsters_library import cr_11_monsters
+from libraries.MonsterLibraries.CR12_monsters_library import cr_12_monsters
+from libraries.MonsterLibraries.CR13_monsters_library import cr_13_monsters
+from libraries.MonsterLibraries.CR14_monsters_library import cr_14_monsters
+from libraries.MonsterLibraries.CR15_monsters_library import cr_15_monsters
+from libraries.MonsterLibraries.CR16_monsters_library import cr_16_monsters
+from libraries.MonsterLibraries.CR17_monsters_library import cr_17_monsters
+from libraries.MonsterLibraries.CR19_monsters_library import cr_19_monsters
+from libraries.MonsterLibraries.CR20_monsters_library import cr_20_monsters
+from libraries.MonsterLibraries.CR21_monsters_library import cr_21_monsters
+from libraries.MonsterLibraries.CR22_monsters_library import cr_22_monsters
+from libraries.MonsterLibraries.CR23_monsters_library import cr_23_monsters
+from libraries.MonsterLibraries.CR24_monsters_library import cr_24_monsters
+from libraries.MonsterLibraries.CR30_monsters_library import cr_30_monsters
+
 
 
 @bot.command(aliases=("m", "mon"))
 async def monster(ctx, *, query):
     if is_dungeon_master(ctx.author):
-        libraries = [cr_0_monsters, cr_p125_monsters]
+        libraries = [cr_0_monsters, cr_p125_monsters, cr_p25_monsters, cr_p5_monsters, cr_1_monsters, cr_2_monsters, cr_3_monsters, cr_4_monsters, cr_5_monsters, cr_6_monsters, cr_7_monsters, cr_8_monsters, cr_9_monsters, cr_10_monsters, cr_11_monsters, cr_12_monsters, cr_13_monsters, cr_14_monsters, cr_15_monsters, cr_16_monsters, cr_17_monsters, cr_19_monsters, cr_20_monsters, cr_21_monsters, cr_22_monsters, cr_23_monsters, cr_24_monsters, cr_30_monsters]
         matching_monsters = []
         for library in libraries:
             for name, monster in library.items():
@@ -26,9 +52,11 @@ async def monster(ctx, *, query):
     else:
         await ctx.send("You're trying to metagame! Only Dungeon Masters can access the monster details.")
 
+
 def is_dungeon_master(author):
     role_names = [role.name for role in author.roles]
     return "Dungeon Master" in role_names
+
 
 def create_monster_embed(name, monster):
     embed = discord.Embed(title=name)
@@ -41,12 +69,50 @@ def create_monster_embed(name, monster):
 
     abilities = monster.get("abilities")
     if abilities:
-        embed.add_field(name="Abilities", value=abilities, inline=False)
+        abilities_string = "\n".join(f"{ability}: {value}" for ability, value in abilities.items())
+        embed.add_field(name="Abilities", value=abilities_string[:1024], inline=False)
+
+    saving_throws = monster.get("saving_throws")
+    if saving_throws:
+        saving_throws_string = "\n".join(f"{save}: {value}" for save, value in saving_throws.items())
+        embed.add_field(name="Saving Throws", value=saving_throws_string[:1024], inline=False)
+
+    damage_immunities = monster.get("damage_immunities")
+    if damage_immunities:
+        embed.add_field(name="Damage Immunities", value=damage_immunities[:1024], inline=False)
+
+    condition_immunities = monster.get("condition_immunities")
+    if condition_immunities:
+        embed.add_field(name="Condition Immunities", value=condition_immunities[:1024], inline=False)
+
+    senses = monster.get("senses")
+    if senses:
+        embed.add_field(name="Senses", value=senses[:1024], inline=False)
+
+    languages = monster.get("languages")
+    if languages:
+        embed.add_field(name="Languages", value=languages[:1024], inline=False)
+
+    special_traits = monster.get("special_traits")
+    if special_traits:
+        traits_string = ""
+        for trait, description in special_traits.items():
+            if isinstance(description, dict):
+                action_string = "\n".join(f"{action}: {details}" for action, details in description.items())
+                traits_string += f"**{trait}**\n{action_string}\n\n"
+            else:
+                traits_string += f"**{trait}**: {description}\n\n"
+        embed.add_field(name="Special Traits", value=traits_string[:1024], inline=False)
 
     actions = monster.get("actions")
     if actions:
+        action_string = ""
         for action, description in actions.items():
-            embed.add_field(name=action, value=description, inline=False)
+            action_string += f"**{action}**: {description}\n\n"
+        embed.add_field(name="Actions", value=action_string[:1024], inline=False)
 
     return embed
+
+
+
 
