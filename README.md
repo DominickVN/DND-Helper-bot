@@ -1,1 +1,3 @@
-A Dungeons and Dragons helper! Do `&commands` to get a list of helpful commands! Prefix is `&`
+A Dungeons and Dragons helper!
+Prefix is `&`
+Do `&commands` to get a list of helpful commands!
