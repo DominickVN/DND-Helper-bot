@@ -25,7 +25,7 @@ cr_1_monsters = {
         "alignment": "Chaotic Good",
         "senses": "Blindsight 10 ft., Darkvision 60 ft., Passive Perception 10",
         "languages": "Draconic",
-        "ability_scores": {
+        "abilities": {
             "strength": 13,
             "dexterity": 10,
             "constitution": 13,
@@ -68,7 +68,7 @@ cr_1_monsters = {
         "alignment": "Chaotic Evil",
         "senses": "Darkvision 60 ft., Passive Perception 9",
         "languages": "Common, Goblin",
-        "ability_scores": {
+        "abilities": {
             "strength": 15,
             "dexterity": 14,
             "constitution": 13,
@@ -96,7 +96,7 @@ cr_1_monsters = {
         "alignment": "Chaotic Good",
         "senses": "Blindsight 10 ft., Darkvision 60 ft., Passive Perception 10",
         "languages": "Draconic",
-        "ability_scores": {
+        "abilities": {
             "strength": 15,
             "dexterity": 12,
             "constitution": 13,
@@ -155,7 +155,7 @@ cr_1_monsters = {
         "alignment": "Neutral Good",
         "senses": "Darkvision 60 ft., Passive Perception 11",
         "languages": "Elvish, Sylvan",
-        "ability_scores": {
+        "abilities": {
             "strength": 10,
             "dexterity": 12,
             "constitution": 11,
@@ -185,7 +185,7 @@ cr_1_monsters = {
         "alignment": "Lawful Evil",
         "senses": "Darkvision 120 ft., Passive Perception 9",
         "languages": "Dwarvish, Undercommon",
-        "ability_scores": {
+        "abilities": {
             "strength": 14,
             "dexterity": 11,
             "constitution": 14,
@@ -212,7 +212,7 @@ cr_1_monsters = {
         "alignment": "Chaotic Evil",
         "senses": "Darkvision 60 ft., Passive Perception 10",
         "languages": "Understands the languages it knew in life but can't speak",
-        "ability_scores": {
+        "abilities": {
             "strength": 13,
             "dexterity": 15,
             "constitution": 10,
@@ -239,7 +239,7 @@ cr_1_monsters = {
         "alignment": "Neutral Good",
         "senses": "Passive Perception 16",
         "languages": "Understands Common and Auran but can't speak",
-        "ability_scores": {
+        "abilities": {
             "strength": 16,
             "dexterity": 17,
             "constitution": 13,
@@ -324,7 +324,7 @@ cr_1_monsters = {
         "alignment": "Neutral Evil",
         "senses": "Passive Perception 11",
         "languages": "Understands Common but can't speak",
-        "ability_scores": {
+        "abilities": {
             "strength": 15,
             "dexterity": 10,
             "constitution": 12,
@@ -352,7 +352,7 @@ cr_1_monsters = {
         "alignment": "Chaotic Evil",
         "senses": "Passive Perception 12",
         "languages": "Common",
-        "ability_scores": {
+        "abilities": {
             "strength": 12,
             "dexterity": 13,
             "constitution": 12,
@@ -377,7 +377,7 @@ cr_1_monsters = {
         "alignment": "Unaligned",
         "senses": "Passive Perception 13",
         "languages": "understands Common, but can't speak",
-        "ability_scores": {
+        "abilities": {
             "strength": 17,
             "dexterity": 13,
             "constitution": 13,
@@ -403,7 +403,7 @@ cr_1_monsters = {
         "alignment": "Lawful Evil",
         "senses": "Devil's Sight, Passive Perception 10",
         "languages": "Infernal, Common",
-        "ability_scores": {
+        "abilities": {
             "strength": 6,
             "dexterity": 17,
             "constitution": 13,
@@ -451,7 +451,7 @@ cr_1_monsters = {
         "alignment": "Chaotic Evil",
         "senses": "Darkvision 120 ft., Passive Perception 10",
         "languages": "Abyssal, Common",
-        "ability_scores": {
+        "abilities": {
             "strength": 5,
             "dexterity": 17,
             "constitution": 10,
@@ -479,7 +479,7 @@ cr_1_monsters = {
         "alignment": "Chaotic Evil",
         "senses": "Darkvision 60 ft., Passive Perception 10",
         "languages": "Understands all languages it knew in life but can't speak",
-        "ability_scores": {
+        "abilities": {
             "strength": 1,
             "dexterity": 14,
             "constitution": 11,
@@ -506,7 +506,7 @@ cr_1_monsters = {
         "alignment": "Any Alignment",
         "senses": "Passive Perception 12",
         "languages": "Any four languages",
-        "ability_scores": {
+        "abilities": {
             "strength": 10,
             "dexterity": 15,
             "constitution": 10,

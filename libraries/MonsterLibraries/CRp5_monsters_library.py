@@ -7,7 +7,7 @@ cr_p5_monsters = {
         "type": "Beast",
         "alignment": "Unaligned",
         "senses": "Passive Perception 13",
-        "ability_scores": {
+        "abilities": {
             "strength": 16,
             "dexterity": 14,
             "constitution": 14,
@@ -31,7 +31,7 @@ cr_p5_monsters = {
         "type": "Beast",
         "alignment": "Unaligned",
         "senses": "Passive Perception 13",
-        "ability_scores": {
+        "abilities": {
             "strength": 15,
             "dexterity": 10,
             "constitution": 14,
@@ -54,7 +54,7 @@ cr_p5_monsters = {
         "senses": "Darkvision 60 ft., Passive Perception 10",
         "condition_immunities": "Petrified",
         "damage_immunities": "Petrification",
-        "ability_scores": {
+        "abilities": {
             "strength": 6,
             "dexterity": 12,
             "constitution": 11,
@@ -75,7 +75,7 @@ cr_p5_monsters = {
         "type": "Beast",
         "alignment": "Unaligned",
         "senses": "Passive Perception 10",
-        "ability_scores": {
+        "abilities": {
             "strength": 15,
             "dexterity": 10,
             "constitution": 13,
@@ -96,7 +96,7 @@ cr_p5_monsters = {
         "type": "Monstrosity",
         "alignment": "Unaligned",
         "senses": "Blindsight 60 ft., Passive Perception 10",
-        "ability_scores": {
+        "abilities": {
             "strength": 16,
             "dexterity": 12,
             "constitution": 13,
@@ -121,7 +121,7 @@ cr_p5_monsters = {
         "senses": "Darkvision 60 ft., Passive Perception 10",
         "damage_immunities": "Poison",
         "condition_immunities": "Poisoned",
-        "ability_scores": {
+        "abilities": {
             "strength": 5,
             "dexterity": 14,
             "constitution": 10,
@@ -146,7 +146,7 @@ cr_p5_monsters = {
         "type": "Beast",
         "alignment": "Unaligned",
         "senses": "Passive Perception 11",
-        "ability_scores": {
+        "abilities": {
             "strength": 17,
             "dexterity": 11,
             "constitution": 12,
@@ -167,7 +167,7 @@ cr_p5_monsters = {
         "type": "Beast",
         "alignment": "Unaligned",
         "senses": "Passive Perception 12",
-        "ability_scores": {
+        "abilities": {
             "strength": 12,
             "dexterity": 15,
             "constitution": 13,
@@ -191,7 +191,7 @@ cr_p5_monsters = {
         "type": "Beast",
         "alignment": "Unaligned",
         "senses": "Passive Perception 10",
-        "ability_scores": {
+        "abilities": {
             "strength": 10,
             "dexterity": 14,
             "constitution": 10,
@@ -213,7 +213,7 @@ cr_p5_monsters = {
         "subtype": "Gnoll",
         "alignment": "Chaotic Evil",
         "senses": "Darkvision 60 ft., Passive Perception 10",
-        "ability_scores": {
+        "abilities": {
             "strength": 14,
             "dexterity": 12,
             "constitution": 13,
@@ -240,7 +240,7 @@ cr_p5_monsters = {
         "alignment": "Lawful Good",
         "senses": "Darkvision 120 ft., Passive Perception 10",
         "languages": "Gnomish, Terran, Undercommon",
-        "ability_scores": {
+        "abilities": {
             "strength": 15,
             "dexterity": 14,
             "constitution": 14,
@@ -266,7 +266,7 @@ cr_p5_monsters = {
         "alignment": "Unaligned",
         "senses": "Blindsight 60 ft., Passive Perception 8",
         "condition_immunities": "Blinded, Charmed, Deafened, Exhaustion, Frightened, Prone",
-        "ability_scores": {
+        "abilities": {
             "strength": 12,
             "dexterity": 6,
             "constitution": 13,
@@ -292,7 +292,7 @@ cr_p5_monsters = {
         "alignment": "Lawful Evil",
         "senses": "Darkvision 60 ft., Passive Perception 10",
         "languages": "Common, Goblin",
-        "ability_scores": {
+        "abilities": {
             "strength": 13,
             "dexterity": 12,
             "constitution": 12,
@@ -317,7 +317,7 @@ cr_p5_monsters = {
         "senses": "Darkvision 60 ft., Passive Perception 10",
         "damage_immunities": "Cold",
         "condition_immunities": "Frozen",
-        "ability_scores": {
+        "abilities": {
             "strength": 7,
             "dexterity": 13,
             "constitution": 10,
@@ -344,7 +344,7 @@ cr_p5_monsters = {
         "alignment": "Neutral",
         "senses": "Passive Perception 10",
         "languages": "Draconic",
-        "ability_scores": {
+        "abilities": {
             "strength": 15,
             "dexterity": 10,
             "constitution": 13,
@@ -371,7 +371,7 @@ cr_p5_monsters = {
         "senses": "Darkvision 60 ft., Passive Perception 10",
         "damage_immunities": "Fire",
         "condition_immunities": "Fire",
-        "ability_scores": {
+        "abilities": {
             "strength": 8,
             "dexterity": 12,
             "constitution": 12,
@@ -399,7 +399,7 @@ cr_p5_monsters = {
         "senses": "Darkvision 60 ft., Passive Perception 10",
         "damage_immunities": "Fire",
         "condition_immunities": "Charmed",
-        "ability_scores": {
+        "abilities": {
             "strength": 7,
             "dexterity": 15,
             "constitution": 10,
@@ -425,7 +425,7 @@ cr_p5_monsters = {
         "alignment": "Chaotic Evil",
         "senses": "Darkvision 60 ft., Passive Perception 9",
         "languages": "Common, Orc",
-        "ability_scores": {
+        "abilities": {
             "strength": 16,
             "dexterity": 12,
             "constitution": 16,
@@ -446,7 +446,7 @@ cr_p5_monsters = {
         "type": "Beast",
         "alignment": "Unaligned",
         "senses": "Blindsight 30 ft., Passive Perception 10",
-        "ability_scores": {
+        "abilities": {
             "strength": 14,
             "dexterity": 13,
             "constitution": 13,
@@ -472,7 +472,7 @@ cr_p5_monsters = {
         "alignment": "Unaligned",
         "senses": "Darkvision 60 ft., Passive Perception 10",
         "condition_immunities": "Charmed",
-        "ability_scores": {
+        "abilities": {
             "strength": 13,
             "dexterity": 12,
             "constitution": 13,
@@ -498,7 +498,7 @@ cr_p5_monsters = {
         "alignment": "Lawful Evil",
         "senses": "Darkvision 120 ft., Passive Perception 10",
         "languages": "Sahuagin",
-        "ability_scores": {
+        "abilities": {
             "strength": 13,
             "dexterity": 11,
             "constitution": 12,
@@ -524,7 +524,7 @@ cr_p5_monsters = {
         "alignment": "Chaotic Good",
         "senses": "Passive Perception 12",
         "languages": "Common, Elvish, Sylvan",
-        "ability_scores": {
+        "abilities": {
             "strength": 12,
             "dexterity": 16,
             "constitution": 11,
@@ -551,7 +551,7 @@ cr_p5_monsters = {
         "alignment": "Any Alignment",
         "senses": "Passive Perception 13",
         "languages": "Any One Language",
-        "ability_scores": {
+        "abilities": {
             "strength": 11,
             "dexterity": 14,
             "constitution": 12,
@@ -580,7 +580,7 @@ cr_p5_monsters = {
         "damage_resistances": "Acid, Cold, Fire, Lightning, Thunder; Bludgeoning, Piercing, and Slashing from Nonmagical Attacks",
         "damage_immunities": "Necrotic, Poison",
         "condition_immunities": "Exhaustion, Frightened, Grappled, Paralyzed, Petrified, Poisoned, Prone, Restrained",
-        "ability_scores": {
+        "abilities": {
             "strength": 6,
             "dexterity": 14,
             "constitution": 13,
@@ -605,7 +605,7 @@ cr_p5_monsters = {
         "alignment": "Unaligned",
         "senses": "Blindsight 10 ft., Passive Perception 10",
         "condition_immunities": "Charmed, Frightened, Grappled, Paralyzed, Petrified, Prone, Restrained, Stunned",
-        "ability_scores": {
+        "abilities": {
             "strength": 3,
             "dexterity": 13,
             "constitution": 10,
@@ -631,7 +631,7 @@ cr_p5_monsters = {
         "alignment": "Any Non-Lawful Alignment",
         "senses": "Passive Perception 10",
         "languages": "Any One Language",
-        "ability_scores": {
+        "abilities": {
             "strength": 15,
             "dexterity": 11,
             "constitution": 14,
@@ -654,7 +654,7 @@ cr_p5_monsters = {
         "type": "Beast",
         "alignment": "Unaligned",
         "senses": "Passive Perception 11",
-        "ability_scores": {
+        "abilities": {
             "strength": 18,
             "dexterity": 12,
             "constitution": 13,
@@ -680,7 +680,7 @@ cr_p5_monsters = {
         "senses": "Darkvision 60 ft., Passive Perception 11",
         "damage_immunities": "Poison",
         "condition_immunities": "Exhaustion, Poisoned",
-        "ability_scores": {
+        "abilities": {
             "strength": 18,
             "dexterity": 12,
             "constitution": 15,

@@ -6,7 +6,7 @@ cr_p125_monsters = {
         "speed": "30 ft.",
         "size": "Medium",
         "type": "Humanoid",
-        "ability_scores": {
+        "abilities": {
             "strength": 11,
             "dexterity": 12,
             "constitution": 12,
@@ -26,7 +26,7 @@ cr_p125_monsters = {
         "speed": "10 ft., fly 60 ft.",
         "size": "Small",
         "type": "Beast",
-        "ability_scores": {
+        "abilities": {
             "strength": 6,
             "dexterity": 14,
             "constitution": 10,
@@ -45,7 +45,7 @@ cr_p125_monsters = {
         "speed": "50 ft.",
         "size": "Large",
         "type": "Beast",
-        "ability_scores": {
+        "abilities": {
             "strength": 16,
             "dexterity": 8,
             "constitution": 14,
@@ -62,7 +62,7 @@ cr_p125_monsters = {
         "speed": "30 ft.",
         "size": "Medium",
         "type": "Humanoid",
-        "ability_scores": {
+        "abilities": {
             "strength": 11,
             "dexterity": 12,
             "constitution": 10,
@@ -82,7 +82,7 @@ cr_p125_monsters = {
         "speed": "30 ft., fly 60 ft.",
         "size": "Tiny",
         "type": "Beast",
-        "ability_scores": {
+        "abilities": {
             "strength": 4,
             "dexterity": 18,
             "constitution": 11,
@@ -101,7 +101,7 @@ cr_p125_monsters = {
         "speed": "30 ft., swim 30 ft.",
         "size": "Medium",
         "type": "Beast",
-        "ability_scores": {
+        "abilities": {
             "strength": 13,
             "dexterity": 15,
             "constitution": 11,
@@ -120,7 +120,7 @@ cr_p125_monsters = {
         "speed": "30 ft.",
         "size": "Small",
         "type": "Beast",
-        "ability_scores": {
+        "abilities": {
             "strength": 7,
             "dexterity": 15,
             "constitution": 11,
@@ -139,7 +139,7 @@ cr_p125_monsters = {
         "speed": "40 ft.",
         "size": "Medium",
         "type": "Beast",
-        "ability_scores": {
+        "abilities": {
             "strength": 11,
             "dexterity": 16,
             "constitution": 10,
@@ -158,7 +158,7 @@ cr_p125_monsters = {
         "speed": "30 ft.",
         "size": "Medium",
         "type": "Humanoid",
-        "ability_scores": {
+        "abilities": {
             "strength": 13,
             "dexterity": 12,
             "constitution": 12,
@@ -178,7 +178,7 @@ cr_p125_monsters = {
         "speed": "30 ft.",
         "size": "Small",
         "type": "Humanoid",
-        "ability_scores": {
+        "abilities": {
             "strength": 7,
             "dexterity": 15,
             "constitution": 9,
@@ -197,7 +197,7 @@ cr_p125_monsters = {
         "speed": "40 ft.",
         "size": "Medium",
         "type": "Beast",
-        "ability_scores": {
+        "abilities": {
             "strength": 13,
             "dexterity": 14,
             "constitution": 12,
@@ -216,7 +216,7 @@ cr_p125_monsters = {
         "speed": "10 ft., swim 40 ft.",
         "size": "Medium",
         "type": "Humanoid",
-        "ability_scores": {
+        "abilities": {
             "strength": 10,
             "dexterity": 13,
             "constitution": 12,
@@ -235,7 +235,7 @@ cr_p125_monsters = {
         "speed": "40 ft.",
         "size": "Medium",
         "type": "Beast",
-        "ability_scores": {
+        "abilities": {
             "strength": 14,
             "dexterity": 10,
             "constitution": 13,
@@ -254,7 +254,7 @@ cr_p125_monsters = {
         "speed": "30 ft.",
         "size": "Medium",
         "type": "Humanoid",
-        "ability_scores": {
+        "abilities": {
             "strength": 11,
             "dexterity": 12,
             "constitution": 11,
@@ -273,7 +273,7 @@ cr_p125_monsters = {
         "speed": "30 ft., swim 30 ft.",
         "size": "Tiny",
         "type": "Beast",
-        "ability_scores": {
+        "abilities": {
             "strength": 2,
             "dexterity": 16,
             "constitution": 11,
@@ -292,7 +292,7 @@ cr_p125_monsters = {
         "speed": "40 ft.",
         "size": "Medium",
         "type": "Beast",
-        "ability_scores": {
+        "abilities": {
             "strength": 15,
             "dexterity": 10,
             "constitution": 13,
@@ -311,7 +311,7 @@ cr_p125_monsters = {
         "speed": "10 ft., fly 40 ft.",
         "size": "Tiny",
         "type": "Beast",
-        "ability_scores": {
+        "abilities": {
             "strength": 4,
             "dexterity": 16,
             "constitution": 11,
@@ -330,7 +330,7 @@ cr_p125_monsters = {
         "speed": "30 ft.",
         "size": "Medium",
         "type": "Humanoid",
-        "ability_scores": {
+        "abilities": {
             "strength": 13,
             "dexterity": 11,
             "constitution": 12,

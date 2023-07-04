@@ -5,7 +5,7 @@ cr_p25_monsters = {
         "speed": "30 ft.",
         "size": "Medium",
         "type": "Humanoid",
-        "ability_scores": {
+        "abilities": {
             "strength": 10,
             "dexterity": 10,
             "constitution": 10,
@@ -24,7 +24,7 @@ cr_p25_monsters = {
         "speed": "50 ft.",
         "size": "Large",
         "type": "Beast",
-        "ability_scores": {
+        "abilities": {
             "strength": 14,
             "dexterity": 12,
             "constitution": 14,
@@ -43,7 +43,7 @@ cr_p25_monsters = {
         "speed": "40 ft.",
         "size": "Medium",
         "type": "Fey",
-        "ability_scores": {
+        "abilities": {
             "strength": 12,
             "dexterity": 17,
             "constitution": 12,
@@ -63,7 +63,7 @@ cr_p25_monsters = {
         "speed": "40 ft.",
         "size": "Medium",
         "type": "Beast",
-        "ability_scores": {
+        "abilities": {
             "strength": 13,
             "dexterity": 11,
             "constitution": 12,
@@ -82,7 +82,7 @@ cr_p25_monsters = {
         "speed": "30 ft., swim 30 ft.",
         "size": "Large",
         "type": "Beast",
-        "ability_scores": {
+        "abilities": {
             "strength": 15,
             "dexterity": 14,
             "constitution": 12,
@@ -101,7 +101,7 @@ cr_p25_monsters = {
         "speed": "40 ft.",
         "size": "Large",
         "type": "Beast",
-        "ability_scores": {
+        "abilities": {
             "strength": 18,
             "dexterity": 10,
             "constitution": 12,
@@ -120,7 +120,7 @@ cr_p25_monsters = {
         "speed": "20 ft.",
         "size": "Small",
         "type": "Fiend (Demon)",
-        "ability_scores": {
+        "abilities": {
             "strength": 11,
             "dexterity": 11,
             "constitution": 12,
@@ -140,7 +140,7 @@ cr_p25_monsters = {
         "speed": "30 ft.",
         "size": "Medium",
         "type": "Humanoid",
-        "ability_scores": {
+        "abilities": {
             "strength": 10,
             "dexterity": 14,
             "constitution": 10,
@@ -160,7 +160,7 @@ cr_p25_monsters = {
         "speed": "50 ft.",
         "size": "Large",
         "type": "Beast",
-        "ability_scores": {
+        "abilities": {
             "strength": 16,
             "dexterity": 10,
             "constitution": 12,
@@ -179,7 +179,7 @@ cr_p25_monsters = {
         "speed": "0 ft., fly 50 ft. (hover)",
         "size": "Small",
         "type": "Construct",
-        "ability_scores": {
+        "abilities": {
             "strength": 12,
             "dexterity": 15,
             "constitution": 11,
@@ -198,7 +198,7 @@ cr_p25_monsters = {
         "speed": "30 ft., burrow 10 ft.",
         "size": "Medium",
         "type": "Beast",
-        "ability_scores": {
+        "abilities": {
             "strength": 13,
             "dexterity": 10,
             "constitution": 15,
@@ -217,7 +217,7 @@ cr_p25_monsters = {
         "speed": "10 ft., fly 60 ft.",
         "size": "Large",
         "type": "Beast",
-        "ability_scores": {
+        "abilities": {
             "strength": 15,
             "dexterity": 16,
             "constitution": 11,
@@ -237,7 +237,7 @@ cr_p25_monsters = {
         "speed": "30 ft., climb 30 ft.",
         "size": "Small",
         "type": "Beast",
-        "ability_scores": {
+        "abilities": {
             "strength": 5,
             "dexterity": 14,
             "constitution": 12,
@@ -256,7 +256,7 @@ cr_p25_monsters = {
         "speed": "30 ft., swim 30 ft.",
         "size": "Medium",
         "type": "Beast",
-        "ability_scores": {
+        "abilities": {
             "strength": 12,
             "dexterity": 13,
             "constitution": 11,
@@ -275,7 +275,7 @@ cr_p25_monsters = {
         "speed": "30 ft., climb 30 ft.",
         "size": "Large",
         "type": "Beast",
-        "ability_scores": {
+        "abilities": {
             "strength": 15,
             "dexterity": 12,
             "constitution": 13,
@@ -294,7 +294,7 @@ cr_p25_monsters = {
         "speed": "5 ft., fly 60 ft.",
         "size": "Large",
         "type": "Beast",
-        "ability_scores": {
+        "abilities": {
             "strength": 13,
             "dexterity": 15,
             "constitution": 12,
@@ -314,7 +314,7 @@ cr_p25_monsters = {
         "speed": "30 ft., swim 30 ft.",
         "size": "Medium",
         "type": "Beast",
-        "ability_scores": {
+        "abilities": {
             "strength": 10,
             "dexterity": 18,
             "constitution": 13,
@@ -333,7 +333,7 @@ cr_p25_monsters = {
         "speed": "40 ft., climb 40 ft.",
         "size": "Medium",
         "type": "Beast",
-        "ability_scores": {
+        "abilities": {
             "strength": 12,
             "dexterity": 16,
             "constitution": 13,
@@ -353,7 +353,7 @@ cr_p25_monsters = {
         "size": "Small",
         "type": "Humanoid",
         "subtype": "Goblinoid",
-        "ability_scores": {
+        "abilities": {
             "strength": 8,
             "dexterity": 14,
             "constitution": 10,
@@ -374,7 +374,7 @@ cr_p25_monsters = {
         "type": "Humanoid",
         "subtype": "Grimlock",
         "senses": "Blindsight 30 ft.",
-        "ability_scores": {
+        "abilities": {
             "strength": 16,
             "dexterity": 8,
             "constitution": 12,
@@ -393,7 +393,7 @@ cr_p25_monsters = {
         "speed": "50 ft., climb 40 ft.",
         "size": "Medium",
         "type": "Beast",
-        "ability_scores": {
+        "abilities": {
             "strength": 14,
             "dexterity": 15,
             "constitution": 10,
@@ -414,7 +414,7 @@ cr_p25_monsters = {
         "type": "Dragon",
         "alignment": "Neutral Good",
         "senses": "Darkvision 60 ft., passive Perception 12",
-        "ability_scores": {
+        "abilities": {
             "strength": 6,
             "dexterity": 15,
             "constitution": 13,
@@ -436,7 +436,7 @@ cr_p25_monsters = {
         "speed": "60 ft.",
         "size": "Large",
         "type": "Beast",
-        "ability_scores": {
+        "abilities": {
             "strength": 16,
             "dexterity": 10,
             "constitution": 12,
@@ -459,7 +459,7 @@ cr_p25_monsters = {
         "senses": "Darkvision 60 ft.",
         "condition_immunities": "Exhaustion, Poisoned",
         "damage_immunities": "Poison",
-        "ability_scores": {
+        "abilities": {
             "strength": 10,
             "dexterity": 14,
             "constitution": 15,
@@ -483,7 +483,7 @@ cr_p25_monsters = {
         "type": "Fey",
         "alignment": "Neutral Good",
         "senses": "Darkvision 60 ft., passive Perception 10",
-        "ability_scores": {
+        "abilities": {
             "strength": 3,
             "dexterity": 18,
             "constitution": 10,
@@ -510,7 +510,7 @@ cr_p25_monsters = {
         "damage_immunities": "Fire, Poison",
         "condition_immunities": "Poisoned",
         "languages": "Aquan, Ignan",
-        "ability_scores": {
+        "abilities": {
             "strength": 5,
             "dexterity": 11,
             "constitution": 12,
@@ -536,7 +536,7 @@ cr_p25_monsters = {
         "senses": "Blindsight 60 ft., passive Perception 10",
         "condition_immunities": "Charmed, Frightened, Grappled, Paralyzed, Petrified, Prone, Restrained, Stunned",
         "damage_immunities": "Bludgeoning, Piercing, Slashing",
-        "ability_scores": {
+        "abilities": {
             "strength": 5,
             "dexterity": 15,
             "constitution": 10,
@@ -562,7 +562,7 @@ cr_p25_monsters = {
         "senses": "Darkvision 30 ft., passive Perception 10",
         "condition_immunities": "Charmed, Frightened, Grappled, Paralyzed, Petrified, Prone, Restrained, Stunned",
         "damage_immunities": "Bludgeoning, Piercing, Slashing",
-        "ability_scores": {
+        "abilities": {
             "strength": 9,
             "dexterity": 11,
             "constitution": 9,
@@ -588,7 +588,7 @@ cr_p25_monsters = {
         "senses": "Passive Perception 10",
         "condition_immunities": "Charmed, Frightened, Grappled, Paralyzed, Petrified, Prone, Restrained, Stunned",
         "damage_immunities": "Bludgeoning, Piercing, Slashing",
-        "ability_scores": {
+        "abilities": {
             "strength": 6,
             "dexterity": 14,
             "constitution": 8,
@@ -614,7 +614,7 @@ cr_p25_monsters = {
         "senses": "Blindsight 30 ft. (blind beyond this radius), passive Perception 10",
         "condition_immunities": "Blinded, Deafened",
         "damage_immunities": "Poison",
-        "ability_scores": {
+        "abilities": {
             "strength": 3,
             "dexterity": 1,
             "constitution": 10,
@@ -638,7 +638,7 @@ cr_p25_monsters = {
         "type": "Beast",
         "alignment": "Unaligned",
         "senses": "Passive Perception 13",
-        "ability_scores": {
+        "abilities": {
             "strength": 12,
             "dexterity": 15,
             "constitution": 12,

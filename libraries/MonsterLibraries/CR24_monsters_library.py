@@ -80,7 +80,7 @@ cr_24_monsters = {
                 "Frightful Presence": "Each creature of the dragon's choice that is within 120 ft. of the dragon and aware of it must succeed on a DC 23 Wisdom saving throw or become frightened for 1 minute. A creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success.",
                 "Breath Weapons (Recharge 5-6)": "The dragon uses one of the following breath weapons:",
                 "Change Shape": "The dragon magically polymorphs into a humanoid or beast that has a challenge rating no higher than its own, or back into its true form.",
-                "Legendary Actions": {
+            "Legendary Actions": {
                     "Detect": "The dragon makes a Wisdom (Perception) check.",
                     "Tail Attack": "The dragon makes a tail attack.",
                     "Wing Attack (Costs 2 Actions)": "The dragon beats its wings. Each creature within 15 ft. of the dragon must succeed on a DC 24 Dexterity saving throw or take 17 (2d6 + 10) bludgeoning damage and be knocked prone. The dragon can then fly up to half its flying speed."

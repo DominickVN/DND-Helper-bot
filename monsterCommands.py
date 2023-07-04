@@ -52,11 +52,9 @@ async def monster(ctx, *, query):
     else:
         await ctx.send("You're trying to metagame! Only Dungeon Masters can access the monster details.")
 
-
 def is_dungeon_master(author):
     role_names = [role.name for role in author.roles]
     return "Dungeon Master" in role_names
-
 
 def create_monster_embed(name, monster):
     embed = discord.Embed(title=name)
@@ -69,8 +67,16 @@ def create_monster_embed(name, monster):
 
     abilities = monster.get("abilities")
     if abilities:
-        abilities_string = "\n".join(f"{ability}: {value}" for ability, value in abilities.items())
-        embed.add_field(name="Abilities", value=abilities_string[:1024], inline=False)
+        ability_list = list(abilities.items())
+        half_length = (len(ability_list) + 1) // 2
+        for i, (ability, value) in enumerate(ability_list):
+            if i < half_length:
+                column_name = "Abilities"
+            else:
+                column_name = "Abilities (Column 2)"
+            modifier = (value - 10) // 2  # Calculate ability score modifier
+            modifier_str = f"+{modifier}" if modifier > 0 else str(modifier)
+            embed.add_field(name=column_name if i == 0 else "\u200B", value=f"{ability}: {value} ({modifier_str})", inline=True)
 
     saving_throws = monster.get("saving_throws")
     if saving_throws:
@@ -98,21 +104,47 @@ def create_monster_embed(name, monster):
         traits_string = ""
         for trait, description in special_traits.items():
             if isinstance(description, dict):
-                action_string = "\n".join(f"{action}: {details}" for action, details in description.items())
-                traits_string += f"**{trait}**\n{action_string}\n\n"
+                action_string = ""
+                for key, value in description.items():
+                    action_string += f"**{key}**: {value}\n"
+                traits_string += f"**{trait}**\n{action_string}\n"
             else:
-                traits_string += f"**{trait}**: {description}\n\n"
-        embed.add_field(name="Special Traits", value=traits_string[:1024], inline=False)
+                traits_string += f"**{trait}**: {description}\n"
+            traits_string += "\n"  # Add an extra line after each Special Trait
+        traits_chunks = split_string_into_chunks(traits_string, 1024)
+        for i, chunk in enumerate(traits_chunks):
+            embed.add_field(name=" " if i > 0 else "Special Traits", value=chunk, inline=False)
 
     actions = monster.get("actions")
     if actions:
-        action_string = ""
+        actions_string = ""
         for action, description in actions.items():
-            action_string += f"**{action}**: {description}\n\n"
-        embed.add_field(name="Actions", value=action_string[:1024], inline=False)
+            if isinstance(description, dict):
+                action_string = ""
+                for key, value in description.items():
+                    action_string += f"**{key}**: {value}\n"
+                actions_string += f"**{action}**\n{action_string}\n"
+            else:
+                actions_string += f"**{action}**: {description}\n"
+            actions_string += "\n"  # Add an extra line after each Action
+        actions_chunks = split_string_into_chunks(actions_string, 1024)
+        for i, chunk in enumerate(actions_chunks):
+            embed.add_field(name=" " if i > 0 else "Actions", value=chunk, inline=False)
 
     return embed
 
 
 
-
+def split_string_into_chunks(text, chunk_size):
+    chunks = []
+    current_chunk = ""
+    lines = text.split("\n")
+    for line in lines:
+        if len(current_chunk) + len(line) < chunk_size:
+            current_chunk += f"{line}\n"
+        else:
+            chunks.append(current_chunk)
+            current_chunk = f"{line}\n"
+    if current_chunk:
+        chunks.append(current_chunk)
+    return chunks
