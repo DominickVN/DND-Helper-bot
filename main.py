@@ -12,6 +12,7 @@ import calculator
 import initiative_tracker
 import npc_generator
 import actionsCommands
+import monsterCommands
 # import classCommands
 
 

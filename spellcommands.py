@@ -1,23 +1,23 @@
 import discord
 from bot import bot
 
-from libraries.cantrips_library import cantrips
-from libraries.first_level_library import first_level_spells
-from libraries.second_level_library import second_level_spells
-from libraries.third_level_library import third_level_spells
-from libraries.fourth_level_library import fourth_level_spells
-from libraries.fifth_level_library import fifth_level_spells
-from libraries.sixth_level_library import sixth_level_spells
-from libraries.seventh_level_library import seventh_level_spells
-from libraries.eighth_level_library import eighth_level_spells
-from libraries.ninth_level_library import ninth_level_spells
+from libraries.SpellLibraries.cantrips_library import cantrips
+from libraries.SpellLibraries.first_level_library import first_level_spells
+from libraries.SpellLibraries.second_level_library import second_level_spells
+from libraries.SpellLibraries.third_level_library import third_level_spells
+from libraries.SpellLibraries.fourth_level_library import fourth_level_spells
+from libraries.SpellLibraries.fifth_level_library import fifth_level_spells
+from libraries.SpellLibraries.sixth_level_library import sixth_level_spells
+from libraries.SpellLibraries.seventh_level_library import seventh_level_spells
+from libraries.SpellLibraries.eighth_level_library import eighth_level_spells
+from libraries.SpellLibraries.ninth_level_library import ninth_level_spells
 
 
 
 
 @bot.command(aliases=['s'])
 async def spell(ctx, *, spell_name):
-    spell_name = spell_name.lower()  # Convert the spell name to lowercase for case-insensitive matching
+    spell_name = spell_name.lower()
     spell_info = None
     libraries = [cantrips, first_level_spells, second_level_spells, third_level_spells, fourth_level_spells,
                 fifth_level_spells, sixth_level_spells, seventh_level_spells, eighth_level_spells, ninth_level_spells]
@@ -56,3 +56,4 @@ async def spell(ctx, *, spell_name):
     await ctx.send(embed=embed)
 
 #most spells still work, a small few aren't perfectly formatted yet
+#Discord Messages and Embeds have a character limit, and some spells have way too many characters
