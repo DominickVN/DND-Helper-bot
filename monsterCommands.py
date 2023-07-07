@@ -110,7 +110,7 @@ def create_monster_embed(name, monster):
                 traits_string += f"**{trait}**\n{action_string}\n"
             else:
                 traits_string += f"**{trait}**: {description}\n"
-            traits_string += "\n"  # Add an extra line after each Special Trait
+            traits_string += "\n"
         traits_chunks = split_string_into_chunks(traits_string, 1024)
         for i, chunk in enumerate(traits_chunks):
             embed.add_field(name=" " if i > 0 else "Special Traits", value=chunk, inline=False)
@@ -126,7 +126,7 @@ def create_monster_embed(name, monster):
                 actions_string += f"**{action}**\n{action_string}\n"
             else:
                 actions_string += f"**{action}**: {description}\n"
-            actions_string += "\n"  # Add an extra line after each Action
+            actions_string += "\n"
         actions_chunks = split_string_into_chunks(actions_string, 1024)
         for i, chunk in enumerate(actions_chunks):
             embed.add_field(name=" " if i > 0 else "Actions", value=chunk, inline=False)
@@ -148,3 +148,6 @@ def split_string_into_chunks(text, chunk_size):
     if current_chunk:
         chunks.append(current_chunk)
     return chunks
+
+
+#chatGPT generated the dictionaries, so a lot of them don't work perfectly yet. WIP

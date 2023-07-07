@@ -31,10 +31,9 @@ async def spell(ctx, *, spell_name):
         await ctx.send(response)
         return
 
-    # Capitalize the spell name
+    # Capitalizes the spell name
     spell_name = spell_name.title()
 
-    # Create an embed
     embed = discord.Embed(color=discord.Color.blue())
     embed.add_field(name="Level", value=f"{spell_info['level']}", inline=False)
     embed.add_field(name="Casting Time", value=f"{spell_info['casting_time']}", inline=False)
@@ -44,15 +43,15 @@ async def spell(ctx, *, spell_name):
     embed.add_field(name="Ritual", value=f"{spell_info.get('ritual', False)}", inline=False)
     embed.add_field(name="School", value=f"{spell_info['school']}", inline=False)
     
-    # Split the description into new fields whenever there is a \n or \n\n
+    # Splits the description into new fields whenever there is a \n or \n\n, this is to get around character limits
     description = spell_info['description']
     description_parts = description.split("\n\n")
     for i, part in enumerate(description_parts):
         embed.add_field(name=f"Description (Part {i+1})", value=f"```\n{part}```", inline=False)
 
-    # Send the spell title separately
+    # Send the spell title separately for formatting reasons
     await ctx.send(f"# {spell_name}")
-    # Send the embed
+    # then send the embed
     await ctx.send(embed=embed)
 
 #most spells still work, a small few aren't perfectly formatted yet
