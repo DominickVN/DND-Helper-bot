@@ -13,6 +13,7 @@ import initiative_tracker
 import npc_generator
 import actionsCommands
 import monsterCommands
+import characterCommands
 # import classCommands
 
 
