@@ -21,7 +21,7 @@ async def roll(ctx, dice_expression='1d20', modifier=''):
 
         embed = discord.Embed(title='Roll', color=discord.Color.green())
         embed.add_field(name='', value=dice_expression, inline=False)
-        embed.add_field(name='Rolls', value=', '.join(map(str, rolls)), inline=False)
+        embed.add_field(name='Results', value=', '.join(map(str, rolls)), inline=False)
         if modifier != 0:
             embed.add_field(name='Modifier', value=str(modifier), inline=False)
         embed.add_field(name='Total', value=str(total), inline=False)
@@ -40,7 +40,7 @@ async def rolla(ctx, modifier=''):
         total = max(rolls) + modifier
 
         embed = discord.Embed(title='Roll with Advantage', color=discord.Color.green())
-        embed.add_field(name='Rolls', value=', '.join(map(str, rolls)), inline=False)
+        embed.add_field(name='Results', value=', '.join(map(str, rolls)), inline=False)
         if modifier != 0:
             embed.add_field(name='Modifier', value=str(modifier), inline=False)
         embed.add_field(name='Total', value=str(total), inline=False)
@@ -59,7 +59,7 @@ async def rolld(ctx, modifier=''):
         total = min(rolls) + modifier
 
         embed = discord.Embed(title='Roll with Disadvantage', color=discord.Color.green())
-        embed.add_field(name='Rolls', value=', '.join(map(str, rolls)), inline=False)
+        embed.add_field(name='Results', value=', '.join(map(str, rolls)), inline=False)
         if modifier != 0:
             embed.add_field(name='Modifier', value=str(modifier), inline=False)
         embed.add_field(name='Total', value=str(total), inline=False)
@@ -82,7 +82,7 @@ async def wroll(ctx, dice_expression='', modifier=''):
 
         embed = discord.Embed(title='Whisper Roll', color=discord.Color.green())
         embed.add_field(name='Expression', value=dice_expression, inline=False)
-        embed.add_field(name='Rolls', value=', '.join(map(str, rolls)), inline=False)
+        embed.add_field(name='Results', value=', '.join(map(str, rolls)), inline=False)
         if modifier != 0:
             embed.add_field(name='Modifier', value=str(modifier), inline=False)
         embed.add_field(name='Total', value=str(total), inline=False)
@@ -103,7 +103,7 @@ async def wrolla(ctx, modifier=''):
         total = max(rolls) + modifier
 
         embed = discord.Embed(title='Whisper Roll with Advantage', color=discord.Color.green())
-        embed.add_field(name='Rolls', value=', '.join(map(str, rolls)), inline=False)
+        embed.add_field(name='Results', value=', '.join(map(str, rolls)), inline=False)
         if modifier != 0:
             embed.add_field(name='Modifier', value=str(modifier), inline=False)
         embed.add_field(name='Total', value=str(total), inline=False)
@@ -122,7 +122,7 @@ async def wrolld(ctx, modifier=''):
         total = min(rolls) + modifier
 
         embed = discord.Embed(title='Whisper Roll with Disadvantage', color=discord.Color.green())
-        embed.add_field(name='Rolls', value=', '.join(map(str, rolls)), inline=False)
+        embed.add_field(name='Results', value=', '.join(map(str, rolls)), inline=False)
         if modifier != 0:
             embed.add_field(name='Modifier', value=str(modifier), inline=False)
         embed.add_field(name='Total', value=str(total), inline=False)
