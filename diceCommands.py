@@ -18,10 +18,11 @@ async def roll(ctx, dice_expression='1d20', modifier=''):
 
         rolls = [random.randint(1, num_sides) for _ in range(num_dice)]
         total = sum(rolls) + modifier
+        result_str = ', '.join(str(roll) if roll != 20 else f'**{roll}**' for roll in rolls)
 
         embed = discord.Embed(title='Roll', color=discord.Color.green())
         embed.add_field(name='', value=dice_expression, inline=False)
-        embed.add_field(name='Results', value=', '.join(map(str, rolls)), inline=False)
+        embed.add_field(name='Results', value=result_str, inline=False)
         if modifier != 0:
             embed.add_field(name='Modifier', value=str(modifier), inline=False)
         embed.add_field(name='Total', value=str(total), inline=False)
@@ -30,6 +31,7 @@ async def roll(ctx, dice_expression='1d20', modifier=''):
 
     except (ValueError, IndexError):
         await ctx.send('Invalid dice expression. Please use the format XdY[+Z], where X is the number of dice, Y is the number of sides, and Z is an optional modifier.')
+
 
 
 @bot.command(aliases=['ra'])
@@ -132,6 +134,7 @@ async def wrolld(ctx, modifier=''):
 
     except ValueError:
         await ctx.send('Invalid modifier. Please provide a valid number for the modifier.')
+
 
 @bot.command(aliases=['fac'])
 async def flipacoin(ctx):
