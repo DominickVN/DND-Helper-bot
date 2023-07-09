@@ -24,7 +24,7 @@ conditions = {
     },
 
     'invisible': {
-        'description': 'An invisible creature is impossible to see without the aid of magic or a spe⁠cial sense. For the Purpose of Hiding, the creature is heavily obscured. The creature’s Location can be detected by any noise it makes or any tracks it leaves.\n\nAttack rolls against the creature have disadvantage, and the creature’s Attack rolls have advantage.'
+        'description': 'An invisible creature is impossible to see without the aid of magic or a special sense. For the Purpose of Hiding, the creature is heavily obscured. The creature’s Location can be detected by any noise it makes or any tracks it leaves.\n\nAttack rolls against the creature have disadvantage, and the creature’s Attack rolls have advantage.'
     },
 
     'paralyzed': {

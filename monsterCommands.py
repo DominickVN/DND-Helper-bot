@@ -57,7 +57,7 @@ def is_dungeon_master(author):
     return "Dungeon Master" in role_names
 
 def create_monster_embed(name, monster):
-    embed = discord.Embed(title=name)
+    embed = discord.Embed(title=name, color=discord.Color.teal())
     embed.add_field(name="Hit Points", value=monster["hit_points"], inline=True)
     embed.add_field(name="Armor Class", value=monster["armor_class"], inline=True)
     embed.add_field(name="Speed", value=monster["speed"], inline=True)

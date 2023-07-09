@@ -11,7 +11,7 @@ async def action(ctx, action_name):
         description = action_info["Description"]
         usage = action_info["Usage"]
 
-        embed = discord.Embed(title=f"{action_name} Action", color=discord.Color.blue())
+        embed = discord.Embed(title=f"{action_name} Action", color=discord.Color.yellow())
         embed.add_field(name="Description", value=description, inline=False)
         embed.add_field(name="Usage", value=usage, inline=False)
 

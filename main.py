@@ -14,8 +14,6 @@ import npc_generator
 import actionsCommands
 import monsterCommands
 import characterCommands
-# import classCommands
-
 
 
 intents = discord.Intents.default()
@@ -33,5 +31,4 @@ async def test(ctx):
 @bot.event
 async def on_ready():
     print(f'Logged in as {bot.user.name} ({bot.user.id})')
-
 bot.run(creds.TOKEN)

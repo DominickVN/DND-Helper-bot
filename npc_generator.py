@@ -1,5 +1,7 @@
 import random
+import discord
 from bot import bot
+
 
 npc_races = {
     'human': {
