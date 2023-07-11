@@ -14,6 +14,7 @@ import npc_generator
 import actionsCommands
 import monsterCommands
 import characterCommands
+import slashcommandstest
 
 
 intents = discord.Intents.default()
@@ -25,8 +26,6 @@ intents.members = True
 async def test(ctx):
     await ctx.send("`Bot is working!`")
 #commands for testing
-
-
 
 @bot.event
 async def on_ready():
