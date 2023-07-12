@@ -1,17 +1,17 @@
-from interactions import slash_command, SlashContext
-import asyncio
 import discord
+from discord import app_commands
 
-@slash_command(name="my_command", description="My first command :)", scopes=[362747783679180801])
-async def my_command_function(ctx: SlashContext):
-    await ctx.send("Hello World")
+intents = discord.Intents.default()
+intents.message_content = True
+client = discord.Client(intents=intents)
+tree = app_commands.CommandTree(client)
 
-@slash_command(name="my_long_command", description="My second command :)")
-async def my_long_command_function(ctx: SlashContext):
-    # need to defer it, otherwise, it fails
-    await ctx.defer()
+@tree.command(name='hi')
+async def hi(interaction):
+    await interaction.response.send_message('Hello!')
+    try:        
+        await tree.sync(guild=discord.Object(id=362747783679180801))
 
-    # do stuff for a bit
-    await asyncio.sleep(600)
-
-    await ctx.send("Hello World")
+        print(f'Synced')
+    except Exception as e:
+        print(e)
