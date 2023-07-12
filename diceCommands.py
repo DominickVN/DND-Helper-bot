@@ -21,18 +21,17 @@ async def roll(ctx, dice_expression='1d20', modifier=''):
         result_str = ', '.join(str(roll) if roll != 20 else f'**{roll}**' for roll in rolls)
 
         embed = discord.Embed(title='Roll', color=discord.Color.green())
-        embed.add_field(name='', value=dice_expression, inline=False)
-        embed.add_field(name='Results', value=result_str, inline=False)
+        embed.add_field(name=' ', value=f'```{dice_expression}```', inline=False)
+        embed.add_field(name='Results', value=f'```{result_str}```', inline=True)
         if modifier != 0:
-            embed.add_field(name='Modifier', value=str(modifier), inline=False)
-        embed.add_field(name='Total', value=str(total), inline=False)
+            embed.add_field(name='Modifier', value=f'```{modifier}```', inline=True)
+        embed.add_field(name='Total', value=f'```{total}```', inline=False)
+
 
         await ctx.send(embed=embed)
 
     except (ValueError, IndexError):
         await ctx.send('Invalid dice expression. Please use the format XdY[+Z], where X is the number of dice, Y is the number of sides, and Z is an optional modifier.')
-
-
 
 @bot.command(aliases=['ra'])
 async def rolla(ctx, modifier=''):
@@ -83,11 +82,11 @@ async def wroll(ctx, dice_expression='', modifier=''):
         total = sum(rolls) + modifier
 
         embed = discord.Embed(title='Whisper Roll', color=discord.Color.green())
-        embed.add_field(name='Expression', value=dice_expression, inline=False)
-        embed.add_field(name='Results', value=', '.join(map(str, rolls)), inline=False)
+        embed.add_field(name='Expression', value=f'```{dice_expression}```', inline=False)
+        embed.add_field(name='Results', value=f'```{", ".join(map(str, rolls))}```', inline=False)
         if modifier != 0:
-            embed.add_field(name='Modifier', value=str(modifier), inline=False)
-        embed.add_field(name='Total', value=str(total), inline=False)
+            embed.add_field(name='Modifier', value=f'```{modifier}```', inline=False)
+        embed.add_field(name='Total', value=f'```{total}```', inline=False)
 
         dm_channel = await ctx.author.create_dm()
         await dm_channel.send(embed=embed)
@@ -116,6 +115,7 @@ async def wrolla(ctx, modifier=''):
     except ValueError:
         await ctx.send('Invalid modifier. Please provide a valid number for the modifier.')
 
+
 @bot.command(aliases=['wrd'])
 async def wrolld(ctx, modifier=''):
     try:
@@ -141,6 +141,6 @@ async def flipacoin(ctx):
     result = random.choice(["Heads", "Tails"])
 
     embed = discord.Embed(title='Flip a Coin', color=discord.Color.green())
-    embed.add_field(name='', value=result, inline=False)
+    embed.add_field(name='Result', value=f'```{result}```', inline=False)
 
     await ctx.send(embed=embed)

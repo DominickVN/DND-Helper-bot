@@ -33,13 +33,14 @@ async def spell(ctx, *, spell_name):
     
     spell_name = spell_name.title()
     embed = discord.Embed(color=discord.Color.blue())
-    embed.add_field(name="Level", value=f"{spell_info['level']}", inline=False)
-    embed.add_field(name="Casting Time", value=f"{spell_info['casting_time']}", inline=False)
-    embed.add_field(name="Range", value=f"{spell_info['range']}", inline=False)
+    embed.title = spell_name
+    embed.add_field(name="Level", value=f"{spell_info['level']}", inline=True)
+    embed.add_field(name="Casting Time", value=f"{spell_info['casting_time']}", inline=True)
+    embed.add_field(name="Range", value=f"{spell_info['range']}", inline=True)
     embed.add_field(name="Components", value=f"{spell_info['components']}", inline=False)
-    embed.add_field(name="Duration", value=f"{spell_info['duration']}", inline=False)
-    embed.add_field(name="Ritual", value=f"{spell_info.get('ritual', False)}", inline=False)
-    embed.add_field(name="School", value=f"{spell_info['school']}", inline=False)
+    embed.add_field(name="Duration", value=f"{spell_info['duration']}", inline=True)
+    embed.add_field(name="Ritual", value=f"{spell_info.get('ritual', False)}", inline=True)
+    embed.add_field(name="School", value=f"{spell_info['school']}", inline=True)
     
     # Splits the description into new fields whenever there is a \n or \n\n, this is to get around character limits
     description = spell_info['description']
