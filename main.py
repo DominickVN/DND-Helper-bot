@@ -4,7 +4,7 @@ from discord.ext import commands
 from bot import bot
 
 import diceCommands
-import spellCommands
+import spellcommands
 import conditionCommands
 import pengunerdemoji
 import helpfulCommands
