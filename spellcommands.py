@@ -1,16 +1,16 @@
 import discord
 from bot import bot
 
-from libraries.SpellLibraries.cantrips_library import cantrips
-from libraries.SpellLibraries.first_level_library import first_level_spells
-from libraries.SpellLibraries.second_level_library import second_level_spells
-from libraries.SpellLibraries.third_level_library import third_level_spells
-from libraries.SpellLibraries.fourth_level_library import fourth_level_spells
-from libraries.SpellLibraries.fifth_level_library import fifth_level_spells
-from libraries.SpellLibraries.sixth_level_library import sixth_level_spells
-from libraries.SpellLibraries.seventh_level_library import seventh_level_spells
-from libraries.SpellLibraries.eighth_level_library import eighth_level_spells
-from libraries.SpellLibraries.ninth_level_library import ninth_level_spells
+from dictionaries.SpellLibraries.cantrips_library import cantrips
+from dictionaries.SpellLibraries.first_level_library import first_level_spells
+from dictionaries.SpellLibraries.second_level_library import second_level_spells
+from dictionaries.SpellLibraries.third_level_library import third_level_spells
+from dictionaries.SpellLibraries.fourth_level_library import fourth_level_spells
+from dictionaries.SpellLibraries.fifth_level_library import fifth_level_spells
+from dictionaries.SpellLibraries.sixth_level_library import sixth_level_spells
+from dictionaries.SpellLibraries.seventh_level_library import seventh_level_spells
+from dictionaries.SpellLibraries.eighth_level_library import eighth_level_spells
+from dictionaries.SpellLibraries.ninth_level_library import ninth_level_spells
 
 
 
@@ -19,13 +19,12 @@ from libraries.SpellLibraries.ninth_level_library import ninth_level_spells
 async def spell(ctx, *, spell_name):
     spell_name = spell_name.lower()
     spell_info = None
-    libraries = [cantrips, first_level_spells, second_level_spells, third_level_spells, fourth_level_spells,
+    dictionaries = [cantrips, first_level_spells, second_level_spells, third_level_spells, fourth_level_spells,
                 fifth_level_spells, sixth_level_spells, seventh_level_spells, eighth_level_spells, ninth_level_spells]
-    for library in libraries:
-        if spell_name in library:
-            spell_info = library[spell_name]
+    for dictionary in dictionaries:
+        if spell_name in dictionary:
+            spell_info = dictionary[spell_name]
             break
-
     if not spell_info:
         response = "Spell not found."
         await ctx.send(response)

@@ -8,7 +8,7 @@ initiative_trackers = {}
 async def initiative(ctx, action=None, *, args=None):
     server_id = ctx.guild.id
 
-    # Checks if the server has an active initiative tracker
+    # Checks if the server has an active initiative tracker, so initiatives aren't shared between servers
     if server_id not in initiative_trackers:
         initiative_trackers[server_id] = {
             'main_initiative': {},
@@ -86,7 +86,7 @@ async def initiative(ctx, action=None, *, args=None):
             embed = discord.Embed(title="Secret Initiative Order", description=secret_initiative_order, color=discord.Color.purple())
             await dm_channel.send(embed=embed)
 
-    if action == 'remove':
+    elif action == 'remove':
         if args is None:
             await ctx.send("Invalid Usage. Please provide the name or number of the creature to remove. Usage: `!initiative remove (name/number)`.")
             return

@@ -1,7 +1,7 @@
 import discord
 from discord.ext import commands
 from bot import bot
-from libraries.actions_library import actions
+from dictionaries.actions_library import actions
 
 @bot.command(aliases=['act'])
 async def action(ctx, action_name):

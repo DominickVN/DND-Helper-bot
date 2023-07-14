@@ -1,5 +1,5 @@
 from bot import bot
-from libraries.conditions_library import conditions
+from dictionaries.conditions_library import conditions
 import discord
 from discord.ext import commands
 
