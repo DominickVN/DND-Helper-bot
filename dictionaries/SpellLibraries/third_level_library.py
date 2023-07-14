@@ -8,7 +8,6 @@ third_level_spells = {
         'duration': 'Instantaneous',
         'school': 'Necromancy',
 
-
     },
     'aura of vitality': {
         'description': 'Healing energy radiates from you in an aura with a 30-foot radius. Until the spell ends, the aura moves with you, centered on you. You can use a bonus action to cause one creature in the aura (including you) to regain 2d6 hit points.',
