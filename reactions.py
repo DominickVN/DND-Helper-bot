@@ -9,7 +9,7 @@ intents.reactions = True
 
 @bot.command()
 async def movie_time(ctx):
-    message = await ctx.send("React with 🎦 to join Movie Time!")
+    message = await ctx.send("React with 🎦 to join Movie Time! @everyone")
 
     await message.add_reaction('🎦')
 
