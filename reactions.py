@@ -6,10 +6,9 @@ import asyncio
 intents = discord.Intents.default()
 intents.reactions = True
 
-
 @bot.command()
 async def movie_time(ctx):
-    message = await ctx.send("React with 🎦 to join Movie Time! @everyone")
+    message = await ctx.send("React with 🎦 to join Movie Time so we can ping you! @everyone")
 
     await message.add_reaction('🎦')
 
@@ -23,13 +22,6 @@ async def movie_time(ctx):
 
         if role:
             await user.add_roles(role)
-        else:
-            await ctx.send("The 'Movie Time' role was not found.")
-
-        reaction, user = await bot.wait_for('reaction_remove', timeout=None, check=check)
-
-        if role:
-            await user.remove_roles(role)
         else:
             await ctx.send("The 'Movie Time' role was not found.")
 
